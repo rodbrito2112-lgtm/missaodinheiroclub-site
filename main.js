@@ -26,6 +26,24 @@
     });
   }
 
+
+  /* ---------- Menu no celular ---------- */
+  var menu = document.getElementById("menu");
+  var abrir = document.querySelector(".menu-botao[aria-controls=menu]");
+  if (menu && abrir) {
+    var fechar = menu.querySelector(".menu-fechar");
+    var setMenu = function (aberto) {
+      menu.classList.toggle("aberto", aberto);
+      abrir.setAttribute("aria-expanded", aberto ? "true" : "false");
+      document.body.style.overflow = aberto ? "hidden" : "";
+      if (aberto && fechar) fechar.focus(); else if (!aberto) abrir.focus();
+    };
+    abrir.addEventListener("click", function () { setMenu(true); });
+    if (fechar) fechar.addEventListener("click", function () { setMenu(false); });
+    menu.addEventListener("click", function (e) { if (e.target.closest("a")) { menu.classList.remove("aberto"); abrir.setAttribute("aria-expanded","false"); document.body.style.overflow = ""; } });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && menu.classList.contains("aberto")) setMenu(false); });
+  }
+
   /* ---------- Experimente: pergunta real do jogo (conteúdo da trilha) ---------- */
   var demo = document.getElementById('demo-opcoes');
   if (demo) {
