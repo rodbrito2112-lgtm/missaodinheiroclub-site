@@ -84,11 +84,17 @@ h3{text-wrap:balance}
 
 /* Livro: capa inteira e legível; bônus em faixa subordinada */
 .exp-visual-livro img{height:100%;width:auto;max-height:340px;border-radius:6px;box-shadow:0 14px 28px rgba(0,0,0,.4)}
-.exp-bonus{grid-column:1/-1;display:grid;grid-template-columns:1fr;gap:18px;align-items:center;background:var(--noite2);border-radius:16px;padding:18px}
-.exp-bonus img{width:100%;border-radius:10px;background:var(--creme)}
-.exp-bonus-tit{font-family:var(--titulo);font-weight:800;font-size:18px;color:var(--branco);margin-bottom:4px}
-.exp-bonus p{color:var(--texto2);font-size:16px}
-@media (min-width:760px){.exp-bonus{grid-template-columns:260px 1fr;gap:24px}}
+.exp-bonus{grid-column:1/-1;background:var(--noite2);border-radius:16px;padding:18px}
+.exp-bonus-tit{font-family:var(--titulo);font-weight:800;font-size:18px;color:var(--branco);margin-bottom:14px}
+.bonus-lista{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.bonus-lista a{display:flex;flex-direction:column;gap:8px;color:var(--texto2);font-size:15px;font-weight:600;line-height:1.3;text-decoration:none}
+.bonus-lista img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;background:var(--creme);transition:transform .2s ease}
+.bonus-lista a:hover{color:var(--amarelo)}
+.bonus-lista a:hover img{transform:translateY(-2px)}
+@media (max-width:640px){.bonus-lista{grid-template-columns:1fr;gap:12px}.bonus-lista a{flex-direction:row;align-items:center;gap:14px}.bonus-lista img{width:112px;flex:none}}
+.selos{display:flex;flex-wrap:wrap;gap:8px}
+#experiencias{padding-bottom:40px}
+#experiencias .exp:last-child{padding-bottom:0}
 
 /* Planilha: ilustração do planejamento */
 .plano{width:min(100%,340px);background:var(--creme);color:var(--azul);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:12px}
@@ -109,7 +115,7 @@ h3{text-wrap:balance}
 .exp-visual-video .video-capa{width:100%;height:100%;padding:0}
 .exp-visual-video .video-capa img{width:100%;height:100%;object-fit:cover;transform:none;max-width:none}
 
-/* MDC-JOGO: mini tela com uma pergunta real do jogo */
+/* Trilha Dinheiro: mini tela com uma pergunta real do jogo */
 .tela{width:min(100%,300px);background:var(--creme);color:var(--azul);border-radius:22px;padding:16px;display:flex;flex-direction:column;gap:10px;border:6px solid #050F21}
 .tela-topo{display:flex;align-items:center;gap:10px}
 .tela-topo span{flex:1;height:10px;border-radius:999px;background:linear-gradient(90deg,var(--turquesa) 45%,#E7DFCF 45%)}
