@@ -1,0 +1,90 @@
+/* Estilos globais. O restante do visual está nos atributos style de cada elemento (vindo do canvas). */
+body{margin:0;background:#FFF8EC}
+
+a{color:#09274D}
+a:hover{color:#0E3A6E}
+
+details summary{cursor:pointer;list-style:none}
+
+details summary::-webkit-details-marker{display:none}
+
+a[style*="border-radius: 999px"],button{transition:transform .15s ease,box-shadow .15s ease}
+
+a[style*="border-radius: 999px"]:hover,button:hover{transform:translateY(-2px);box-shadow:0 6px 14px rgba(9,39,77,.18)}
+
+a[style*="border-radius: 999px"]:active,button:active{transform:translateY(1px);box-shadow:none}
+
+details[style*="background"]{transition:transform .15s ease}
+
+details[style*="background"]:hover{transform:translateY(-2px)}
+
+footer nav a{text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .2s ease}
+
+footer nav a:hover{background-size:100% 1px}
+
+.zoom{overflow:hidden}
+
+.zoom img{transition:transform .35s ease}
+
+.zoom:hover img{transform:scale(1.03)}
+
+/* Foco do teclado: azul-marinho no fundo claro, amarelo nas áreas azul-marinho */
+:focus-visible{outline:3px solid #09274D;outline-offset:3px}
+#incomodo :focus-visible,#oferta :focus-visible,footer :focus-visible{outline-color:#FFC12E}
+
+/* Link "Pular para o conteúdo": escondido até receber foco */
+.pular{position:absolute;left:16px;top:-80px;z-index:10;background:#09274D;color:#FFFFFF;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none}
+.pular:focus{top:12px;color:#FFFFFF}
+
+/* Perguntas frequentes: área de toque e sinal de abrir/fechar */
+details.faq summary{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:44px}
+details.faq summary::after{content:"+";flex:none;font-size:24px;font-weight:800;line-height:1;color:#09274D}
+details.faq[open] summary::after{content:"–"}
+
+/* História do autor: o "+" vira "×" quando aberto */
+details.autor summary>span[aria-hidden="true"]{transition:transform .2s ease}
+details.autor[open] summary>span[aria-hidden="true"]{transform:rotate(45deg)}
+
+/* Rodapé: links mais fáceis de tocar */
+footer nav a{display:inline-flex;align-items:center;min-height:44px}
+
+/* Título sem palavra sozinha na última linha */
+h1{text-wrap:balance}
+
+/* Topo no computador: texto, barras e botão à esquerda; o livro à direita.
+   No celular continua em uma coluna, na mesma ordem. */
+@media (min-width: 980px){
+  .hero-grid{display:grid!important;grid-template-columns:minmax(0,7fr) minmax(0,5fr);grid-template-areas:"t v" "s v" "b v" "c v";column-gap:64px;row-gap:24px;max-width:1120px!important;text-align:left!important;align-items:start!important;align-content:center}
+  .h-titulo{grid-area:t}
+  .h-sub{grid-area:s}
+  .h-barras{grid-area:b}
+  .h-cta{grid-area:c;align-items:flex-start!important}
+  .h-video{grid-area:v;align-self:center;aspect-ratio:auto!important;max-width:none!important;background:transparent!important;box-shadow:none!important;padding:0!important;margin:0!important;overflow:visible!important;flex-direction:column!important;gap:0!important}
+  .h-video img{height:auto!important;width:min(100%,340px)!important;transform:rotate(-3deg);box-shadow:0 28px 48px rgba(9,39,77,.32)!important}
+  .h-video>div{position:relative;margin-top:-28px;align-items:center!important;text-align:center!important;background:#09274D;border-radius:18px;padding:16px 22px;box-shadow:0 12px 24px rgba(9,39,77,.2);max-width:340px}
+}
+
+/* Oferta no computador: a imagem acompanha a rolagem ao lado da lista */
+@media (min-width: 900px){.oferta-img{position:sticky;top:24px}}
+
+/* Cartão do autor no celular: foto centralizada acima do título */
+@media (max-width: 560px){.autor-cartao{flex-direction:column;align-items:flex-start}}
+
+/* Campo com erro no formulário */
+input[aria-invalid="true"]{border-color:#B42318!important;outline-color:#B42318}
+
+.hero-in{animation:heroIn .7s ease-out both}
+
+.bar-grow{transform-origin:left center;animation:barGrow 1.4s cubic-bezier(.2,.8,.2,1) .4s both}
+
+@keyframes barGrow{from{transform:scaleX(0)}
+to{transform:scaleX(1)}
+}
+
+@keyframes heroIn{from{opacity:0;transform:translateY(14px)}
+to{opacity:1;transform:none}
+}
+
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}
+}
+
