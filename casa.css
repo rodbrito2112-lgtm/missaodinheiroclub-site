@@ -157,3 +157,30 @@
 .muda span{font-family:var(--titulo);font-weight:800;font-size:20px;color:var(--branco);display:flex;gap:10px;align-items:flex-start}
 .muda span::before{content:"";flex:none;width:26px;height:26px;margin-top:1px;border-radius:50%;background:var(--turquesa) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2309274D' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/14px no-repeat}
 @media (min-width:760px){.muda li{grid-template-columns:1fr 1.3fr;align-items:center;gap:24px}}
+
+/* Briefing 16/11: hub com 5 experiências */
+.hub{display:flex;flex-wrap:wrap;justify-content:center}
+.hub li{flex:0 0 auto}
+.hub-app a{border-style:dashed}
+@media (max-width:760px){.hub{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.hub-app{grid-column:1/-1}}
+@media (min-width:1000px){.hub{display:flex;justify-content:flex-start;max-width:560px}}
+
+/* Planilha (desenho simples do simulador) */
+.porta-img-planilha{background:radial-gradient(closest-side,rgba(18,184,187,.22),transparent),var(--noite2)}
+.planilha-mini{width:min(100%,340px);background:var(--creme);color:var(--azul);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:12px;box-shadow:0 18px 30px rgba(0,0,0,.35)}
+.pl-linha{display:flex;flex-direction:column;gap:6px;font-weight:700;font-size:14px}
+.pl-linha i{display:block;height:22px;width:var(--w);background:var(--turquesa);border-radius:6px}
+.pl-linha:nth-child(2) i{background:var(--amarelo)}
+.planilha-mini p{margin:0;font-size:13px;color:#3D4F66}
+
+/* Aplicativo: em desenvolvimento, destaque menor */
+.app-card{margin-top:20px;display:flex;flex-wrap:wrap;align-items:center;gap:20px 28px;padding:22px 24px;border-radius:24px;border:2px dashed var(--linha);background:transparent}
+.app-rostos{display:flex}
+.app-rostos img{width:64px;height:64px;border-radius:50%;background:#fff;border:4px solid var(--noite);margin-left:-14px}
+.app-rostos img:first-child{margin-left:0}
+.app-txt{flex:1 1 320px;display:flex;flex-direction:column;gap:6px}
+.app-txt h3{font-size:1.4rem}
+.app-txt p{color:var(--texto2);margin:0}
+.selo-dev{align-self:flex-start;display:inline-flex;padding:4px 12px;border-radius:999px;background:rgba(121,102,216,.18);border:1px solid var(--roxo);color:#CFC6FF !important;font-size:13px;font-weight:600}
+.app-link{align-self:flex-start;color:var(--branco);font-weight:600;text-decoration:underline;text-underline-offset:4px;min-height:44px;display:inline-flex;align-items:center}
+.app-link:hover{color:var(--amarelo)}
