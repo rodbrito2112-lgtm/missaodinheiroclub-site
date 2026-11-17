@@ -5,7 +5,7 @@
 window.MDC_CONFIG = {
   // Link do checkout da Hotmart (R$ 27,97 com os 4 bônus).
   // Enquanto estiver vazio, o botão da oferta só rola até a própria oferta.
-  checkoutUrl: 'https://pay.hotmart.com/T108540780S',
+  checkoutUrl: 'https://pay.hotmart.com/F108547611O',
 
   // Para onde vão os cadastros do guia grátis.
   // Pode ser o endpoint de formulário da ferramenta de e-mail (MailerLite, Brevo, RD Station...)
