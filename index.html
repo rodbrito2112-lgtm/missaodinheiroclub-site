@@ -4,14 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Missão Dinheiro Club | Educação financeira para a família inteira</title>
-<meta name="description" content="Educação financeira para a família inteira: livro para os pais, materiais para fazer em casa, planilha, desenho da Turminha no YouTube e um aplicativo em desenvolvimento.">
+<meta name="description" content="Seu filho aprende a lidar com dinheiro, e você aprende junto: livro para os pais, histórias da Turminha, ferramentas para planejar sonhos e o MDC-JOGO para experimentar no navegador.">
 <link rel="canonical" href="https://missaodinheiroclub.com.br/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Missão Dinheiro Club">
 <meta property="og:url" content="https://missaodinheiroclub.com.br/">
 <meta property="og:title" content="Missão Dinheiro Club: educação financeira para a família inteira">
-<meta property="og:description" content="Livro, materiais, planilha, desenho e aplicativo para a família aprender junto a lidar com dinheiro.">
+<meta property="og:description" content="Livro, histórias e ferramentas para pais e filhos aprenderem juntos a lidar com dinheiro.">
+<meta property="og:image" content="https://missaodinheiroclub.com.br/assets/og-club.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0B1E3D">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -20,7 +24,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Nunito:wght@700;800&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <script src="medicao.js"></script>
-<link rel="stylesheet" href="casa.css">
+<link rel="stylesheet" href="home.css">
 </head>
 <body>
 <a href="#conteudo" class="pular">Pular para o conteúdo</a>
@@ -32,38 +36,29 @@
 <header class="topo">
   <div class="faixa topo-in">
     <a href="./" class="logo-link"><img src="assets/logo-main.webp" width="412" height="281" alt="Missão Dinheiro Club, página inicial" class="logo"></a>
-    <button type="button" class="menu-botao" aria-controls="menu" aria-expanded="false" aria-label="Abrir o menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <button type="button" class="menu-botao" aria-controls="menu" aria-expanded="false" aria-label="Abrir o menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     <nav class="menu" id="menu" aria-label="Principal">
-      <button type="button" class="menu-botao menu-fechar" aria-label="Fechar o menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      <button type="button" class="menu-botao menu-fechar" aria-label="Fechar o menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
       <a href="#experiencias">Experiências</a>
-      <a href="livro/">O livro</a>
-      <a href="#materiais">Materiais</a>
-      <a href="#episodio">Desenho</a>
-      <a href="#aplicativo">Aplicativo</a>
+      <a href="#proposta">Nossa proposta</a>
+      <a href="#quem-criou">Quem criou</a>
+      <a href="#contato">Contato</a>
     </nav>
-    <a href="#experiencias" class="btn btn-sm">Experiências</a>
   </div>
 </header>
 
 <main id="conteudo">
 
-<!-- 1. Primeira dobra: o Club -->
+<!-- 1. Abertura: KV e Turminha -->
 <section class="hero">
   <div class="faixa hero-in">
     <div class="hero-texto">
-      <h1>Educação financeira para a família inteira.</h1>
-      <p class="hero-sub">O Missão Dinheiro Club reúne várias formas de aprender sobre dinheiro em casa, todas com a mesma Turminha, para pais e filhos aprenderem juntos.</p>
-      <div class="hero-botoes">
-        <a href="#experiencias" class="btn btn-grande">Conheça as experiências</a>
-        <a href="#porque" class="btn btn-fantasma">Por que começar cedo</a>
+      <h1>Seu filho aprende a lidar com dinheiro. E você aprende junto.</h1>
+      <p class="hero-sub">Uma compra no mercado. Um pedido de presente. Um sonho para realizar. Transforme situações do dia a dia em aprendizado com livros, histórias e ferramentas para a família.</p>
+      <div class="hero-acoes">
+        <a href="#experiencias" class="btn btn-grande">Encontre por onde começar</a>
+        <a href="#proposta" class="link-texto">Conheça a proposta</a>
       </div>
-      <ul class="hub" aria-label="As experiências do Club">
-        <li><a href="#livro"><img src="assets/capa-ebook.webp" width="600" height="900" alt="" class="hub-capa"><span><strong>Livro</strong>para os pais</span></a></li>
-        <li><a href="#materiais"><img src="assets/tiko-idle.webp" width="192" height="192" alt=""><span><strong>Materiais</strong>cartas e kit</span></a></li>
-        <li><a href="#planilha"><img src="assets/leticia-idle.webp" width="192" height="192" alt=""><span><strong>Planilha</strong>simulador</span></a></li>
-        <li><a href="#episodio"><img src="assets/bia-idle.webp" width="192" height="192" alt=""><span><strong>Desenho</strong>no YouTube</span></a></li>
-        <li class="hub-app"><a href="#aplicativo"><img src="assets/mel-idle.webp" width="192" height="192" alt=""><span><strong>Aplicativo</strong>em desenvolvimento</span></a></li>
-      </ul>
     </div>
     <div class="palco" aria-hidden="true">
       <div class="brilho"></div>
@@ -85,219 +80,175 @@
   </div>
 </section>
 
-<!-- 2. Conheça as experiências -->
-<section class="secao" id="experiencias">
-  <div class="faixa">
-    <h2 class="centro">Conheça as experiências</h2>
-    <p class="intro centro">Cada uma ensina de um jeito, e todas se conectam: a mesma Turminha, os mesmos 4 potes e a família aprendendo junto.</p>
-    <div class="portas">
-      <a class="porta porta-livro" href="livro/" id="livro">
-        <div class="porta-img porta-img-capa"><img src="assets/capa-ebook.webp" width="600" height="900" alt="Capa do livro O futuro financeiro do seu filho começa com você" loading="lazy" decoding="async"></div>
-        <div class="porta-txt">
-          <p class="porta-preco">Para os pais · em breve</p>
-          <h3>O livro</h3>
-          <p><em>O futuro financeiro do seu filho começa com você</em>, de Rodrigo Brito. O ponto de partida do Club: o que ensinar em cada idade, em 16 capítulos, com uma missão prática por capítulo.</p>
-          <span class="porta-link">Conhecer o livro</span>
-        </div>
-      </a>
-
-      <a class="porta porta-pistas" href="livro/#bonus" id="materiais">
-        <div class="porta-img porta-img-pistas"><img src="assets/bonus-jogo-pistas.webp" width="800" height="480" alt="Cartas do jogo Missão Dinheiro: Pistas" loading="lazy" decoding="async"></div>
-        <div class="porta-txt">
-          <p class="porta-preco">Bônus do livro · para fazer em casa</p>
-          <h3>Os materiais da família</h3>
-          <p>O jogo de cartas Missão Dinheiro: Pistas, para a mesa da sala, com o kit da família (Caderninho de Mesada, Cofrinho de Quatro Potes e Certificado), os Cartões das missões da semana e o Mapa do que ensinar em cada idade.</p>
-          <span class="porta-link">Ver os materiais</span>
-        </div>
-      </a>
-
-      <a class="porta porta-planilha" href="livro/#bonus" id="planilha">
-        <div class="porta-img porta-img-planilha" aria-hidden="true">
-          <div class="planilha-mini">
-            <div class="pl-linha"><span>Começar aos 20</span><i style="--w:100%"></i></div>
-            <div class="pl-linha"><span>Começar aos 35</span><i style="--w:17%"></i></div>
-            <p>Mesmo valor por mês, até os 60 anos</p>
-          </div>
-        </div>
-        <div class="porta-txt">
-          <p class="porta-preco">Bônus do livro · para os pais</p>
-          <h3>A planilha</h3>
-          <p>Um simulador de juros para ver, com os seus próprios números, a diferença que faz começar cedo. É uma simulação, não uma promessa de rendimento.</p>
-          <span class="porta-link">Ver no livro</span>
-        </div>
-      </a>
-
-      <a class="porta porta-desenho" href="#episodio">
-        <div class="porta-img porta-img-desenho" aria-hidden="true"><img src="assets/tiko-lupa.webp" width="343" height="235" alt="" loading="lazy" decoding="async"></div>
-        <div class="porta-txt">
-          <p class="porta-preco">Grátis no YouTube · para assistir junto</p>
-          <h3>O desenho da Turminha</h3>
-          <p>Episódios curtos com a Bia, a Mel, o Caio, o Tiko e companhia. A criança assiste, e a conversa sobre dinheiro começa sozinha.</p>
-          <span class="porta-link">Assistir ao episódio 1</span>
-        </div>
-      </a>
+<!-- 2. Identificação: faixa curta -->
+<section class="conversa" aria-labelledby="conversa-titulo">
+  <div class="faixa conversa-in">
+    <div class="conversa-txt">
+      <h2 id="conversa-titulo">Seu filho já está aprendendo sobre dinheiro. Com quem?</h2>
+      <p>No mercado, nos vídeos e nos pedidos de “compra pra mim”, ele encontra mensagens sobre consumo todos os dias. Você pode participar desse aprendizado com conversas e escolhas que cabem na rotina.</p>
     </div>
-
-    <div class="app-card" id="aplicativo">
-      <div class="app-rostos" aria-hidden="true">
-        <img src="assets/bia-idle.webp" width="192" height="192" alt="" loading="lazy" decoding="async">
-        <img src="assets/mel-idle.webp" width="192" height="192" alt="" loading="lazy" decoding="async">
-        <img src="assets/caio-idle.webp" width="192" height="192" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="app-txt">
-        <p class="selo-dev">Em desenvolvimento</p>
-        <h3>O aplicativo</h3>
-        <p>Lições curtas para cada idade, dos 5 anos à vida adulta, com os 4 potes e a Turminha. Está em teste com famílias do piloto.</p>
-        <a href="jogo/" class="app-link">Experimentar a versão de teste</a>
-      </div>
+    <div class="falas">
+      <ul aria-label="Frases que toda família já ouviu">
+        <li>“Quero agora.”</li>
+        <li>“É só passar o cartão.”</li>
+        <li>“Todo mundo tem.”</li>
+      </ul>
+      <p class="falas-fecho">Cada uma pode ser o começo de uma conversa.</p>
     </div>
   </div>
 </section>
 
-<!-- 3. Por que começar agora -->
-<section class="secao secao-clara porque" id="porque">
+<!-- 3. Experiências -->
+<section class="secao" id="experiencias" aria-labelledby="exp-titulo">
   <div class="faixa">
-    <h2 class="centro">O dinheiro mudou. A conversa em casa também precisa mudar.</h2>
-    <p class="intro centro">A maioria de nós aprendeu sobre dinheiro errando, já adulto. Nossos filhos estão aprendendo agora, com ou sem a gente.</p>
-    <ul class="mundo">
-      <li><strong>O dinheiro ficou invisível</strong><span>Pix, cartão e aproximação: a criança vê a compra, mas não vê o dinheiro saindo.</span></li>
-      <li><strong>A loja está no bolso</strong><span>Compras dentro dos jogos, influenciador vendendo e propaganda de aposta no meio do vídeo.</span></li>
-      <li><strong>Os pais querem ensinar</strong><span>Mas não sabem por onde começar, e a conversa acaba em "não tem dinheiro" ou em briga.</span></li>
-    </ul>
-    <p class="porque-def centro">Educação financeira não é ficar rico. É aprender a <strong>escolher</strong>, <strong>esperar</strong>, <strong>planejar</strong>, <strong>se proteger</strong> e <strong>ajudar</strong>. E esses hábitos se formam na infância.</p>
-  </div>
-</section>
-
-<!-- 4. O que o seu filho vai aprender -->
-<section class="secao" id="aprende">
-  <div class="faixa">
-    <h2 class="centro">O que o seu filho vai aprender</h2>
-    <p class="intro centro">As perguntas que toda criança faz sobre dinheiro aparecem no livro, nas cartas, no desenho e no aplicativo, com situações do mercado, da mesada e do celular.</p>
-    <div class="temas">
-      <div class="tema" style="--c:#FFC12E">
-        <p class="tema-q">“Quero agora ou espero?”</p>
-        <h3>Escolher</h3>
-        <ul><li>Separar o que precisa do que quer</li><li>Comparar preços, conferir o troco e desconfiar da promoção</li></ul>
-      </div>
-      <div class="tema" style="--c:#2E8B57;--t:#6FD49A">
-        <p class="tema-q">“Quanto falta para o meu sonho?”</p>
-        <h3>Planejar</h3>
-        <ul><li>Dividir o dinheiro em 4 potes: Agora, Reserva, Sonho e Compartilhar</li><li>Juntar para uma meta, saber esperar e ter Reserva para imprevistos</li></ul>
-      </div>
-      <div class="tema" style="--c:#F35A8B;--t:#FF9DBA">
-        <p class="tema-q">“Isso é propaganda?”</p>
-        <h3>Se proteger</h3>
-        <ul><li>Perceber a propaganda no vídeo, no jogo e na loja</li><li>Usar o Pix com segurança e reconhecer um golpe</li></ul>
-      </div>
-      <div class="tema" style="--c:#12B8BB">
-        <p class="tema-q">“Por que a parcela custa mais?”</p>
-        <h3>Entender</h3>
-        <ul><li>Juros, crédito e dívida, sem complicação</li><li>Por que começar cedo ajuda o dinheiro guardado a crescer</li></ul>
-      </div>
+    <div class="sec-cabeca">
+      <h2 id="exp-titulo">Várias formas de aprender. Um propósito em comum.</h2>
+      <p>Conheça as experiências do Club e escolha a que combina com o momento da sua família.</p>
     </div>
 
-  </div>
-</section>
-
-<!-- 5. O que muda em casa -->
-<section class="secao secao-clara" id="muda">
-  <div class="faixa">
-    <h2 class="centro">O que a gente quer ver mudar na sua casa</h2>
-    <p class="intro centro">Pequenas mudanças de todo dia, com a criança e com você.</p>
-    <ul class="muda">
-      <li><s>"Compra pra mim!"</s><span>"Vou juntar no meu pote Sonho."</span></li>
-      <li><s>Briga por causa de dinheiro</s><span>Uma conversa leve, na mesa ou no sofá.</span></li>
-      <li><s>Compra por impulso no jogo</s><span>"Espera, isso é propaganda."</span></li>
-      <li><s>"Não sei como ensinar"</s><span>Um passo a passo para cada idade, e você aprendendo junto.</span></li>
-    </ul>
-  </div>
-</section>
-
-<!-- 6. Confiança -->
-<section class="secao" id="confianca">
-  <div class="faixa">
-    <h2 class="centro">Feito por um pai, para a sua família</h2>
-    <div class="confia confia-so">
-      <div class="autor">
-        <img src="assets/rodrigo-brito.webp" width="360" height="482" alt="Rodrigo Brito" class="autor-foto" loading="lazy" decoding="async">
+    <!-- Livro com bônus -->
+    <article class="exp" id="livro" aria-labelledby="livro-titulo">
+      <div class="exp-visual exp-visual-livro">
+        <img src="assets/capa-ebook.webp" width="600" height="900" alt="Capa do livro O futuro financeiro do seu filho começa com você, de Rodrigo Brito" loading="lazy" decoding="async">
+      </div>
+      <div class="exp-txt">
+        <p class="selo">Livro para os pais · lançamento em breve</p>
+        <h3 id="livro-titulo">A conversa começa com você.</h3>
+        <p class="exp-obra"><em>O futuro financeiro do seu filho começa com você</em>, de Rodrigo Brito</p>
+        <p>Você não precisa ter todas as respostas para começar a ensinar. Conheça o livro que ajuda a transformar situações do dia a dia em conversas e atividades sobre dinheiro.</p>
+        <div class="exp-acoes">
+          <a href="livro/" class="btn">Conhecer o livro e seus bônus</a>
+          <a href="livro/#bonus" class="link-texto">Ver os bônus</a>
+        </div>
+      </div>
+      <div class="exp-bonus">
+        <img src="assets/bonus-jogo-pistas.webp" width="800" height="480" alt="Cartas do jogo Missão Dinheiro: Pistas, que acompanham o livro" loading="lazy" decoding="async">
         <div>
-          <h3>Rodrigo Brito</h3>
-          <p>Pai da Letícia, do Caio e da Mel, engenheiro e mestre em Economia. Aprendeu a lidar com dinheiro tarde e decidiu que os filhos começariam antes dele. O Missão Dinheiro Club leva para outras famílias o que deu certo na casa dele.</p>
-          <a class="livro" href="livro/">
-            <img src="assets/capa-ebook.webp" width="600" height="900" alt="" loading="lazy" decoding="async">
-            <span>A história completa está no livro <em>O futuro financeiro do seu filho começa com você</em></span>
-          </a>
+          <p class="exp-bonus-tit">Acompanha o livro</p>
+          <p>O aprendizado continua fora das páginas, com Pistas e os materiais que acompanham o livro: o jogo de cartas Missão Dinheiro: Pistas com o kit da família (Caderninho de Mesada, Cofrinho de Quatro Potes e Certificado), os Cartões das missões da semana e o Mapa do que ensinar em cada idade.</p>
         </div>
       </div>
+    </article>
+
+    <!-- Planilha -->
+    <article class="exp exp-inv" id="planilha" aria-labelledby="planilha-titulo">
+      <div class="exp-visual exp-visual-plano" role="img" aria-label="Ilustração: um valor guardado todo mês cresce com o passar dos anos">
+        <div class="plano" aria-hidden="true">
+          <p class="plano-tag">Ilustração, não é promessa de rendimento</p>
+          <p class="plano-res">Guardar um pouco todo mês</p>
+          <div class="tempo">
+            <div><i style="height:14%"></i><span>1 ano</span></div>
+            <div><i style="height:30%"></i><span>5 anos</span></div>
+            <div><i style="height:55%"></i><span>10 anos</span></div>
+            <div><i style="height:100%"></i><span>20 anos</span></div>
+          </div>
+          <p class="plano-falta">Quanto mais tempo, mais o dinheiro guardado trabalha.</p>
+        </div>
+      </div>
+      <div class="exp-txt">
+        <p class="selo">Bônus do livro · para os pais</p>
+        <h3 id="planilha-titulo">O que o tempo faz pelo dinheiro guardado?</h3>
+        <p>Uma planilha para simular quanto um valor guardado todo mês pode virar com o passar dos anos, usando os números do livro. Um jeito concreto de mostrar ao seu filho por que vale ter paciência com os sonhos.</p>
+        <p class="exp-pergunta">É uma simulação para aprender, não uma promessa de rendimento.</p>
+        <div class="exp-acoes">
+          <a href="livro/#bonus" class="link-texto">Ver na página do livro</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Desenho -->
+    <article class="exp" id="episodio" aria-labelledby="desenho-titulo">
+      <div class="exp-visual exp-visual-video">
+        <div class="video" id="video" data-id="iwIQv-9KKnE">
+          <button type="button" class="video-capa" id="video-play" aria-label="Assistir ao episódio 1, O Mistério das 12 Moedas">
+            <img src="assets/ep01-miniatura.webp" width="960" height="540" alt="" loading="lazy" decoding="async">
+            <span class="video-play" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+      <div class="exp-txt">
+        <p class="selo">Desenho grátis no YouTube</p>
+        <h3 id="desenho-titulo">Uma história hoje. Uma conversa que continua depois.</h3>
+        <p>Acompanhem a Turminha e usem as situações dos episódios para conversar sobre escolhas, desejos e dinheiro. Comece pelo episódio 1, O Mistério das 12 Moedas.</p>
+        <div class="exp-acoes">
+          <a href="https://www.youtube.com/channel/UC_r9yEVi3Tl_Zd3OXeg3oZQ" target="_blank" rel="noopener" class="btn btn-fantasma">Conhecer o desenho</a>
+        </div>
+        <p class="exp-nota">O vídeo abre pelo YouTube no modo sem cookies, só depois do clique.</p>
+      </div>
+    </article>
+
+    <!-- Aplicativo e MDC-JOGO -->
+    <article class="exp exp-inv" id="aplicativo" aria-labelledby="app-titulo">
+      <div class="exp-visual exp-visual-jogo" role="img" aria-label="Pergunta do MDC-JOGO: a Mel ganhou R$ 100 da avó e R$ 50 de mesada e comprou algo de R$ 40. Quanto sobrou?">
+        <div class="tela" aria-hidden="true">
+          <div class="tela-topo"><span></span><b><svg><use href="#moeda"/></svg>12</b></div>
+          <div class="tela-q"><img src="assets/mel-idle.webp" width="192" height="192" alt="" loading="lazy" decoding="async"><p>Mel ganhou R$ 100 da avó e R$ 50 de mesada. Depois comprou algo de R$ 40. Quanto sobrou?</p></div>
+          <span class="tela-op tela-ok">R$ 110</span>
+          <span class="tela-op">R$ 150</span>
+          <span class="tela-op">R$ 90</span>
+        </div>
+      </div>
+      <div class="exp-txt">
+        <p class="selo selo-dev">Aplicativo em desenvolvimento</p>
+        <h3 id="app-titulo">O aprendizado já pode começar.</h3>
+        <p>Estamos desenvolvendo o aplicativo do Missão Dinheiro Club. Enquanto ele não chega, você e seu filho já podem experimentar o MDC-JOGO pelo navegador e conhecer um pouco da proposta.</p>
+        <div class="exp-acoes">
+          <a href="jogo/" class="btn btn-fantasma">Experimentar o MDC-JOGO</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- 4. Quem criou -->
+<section class="secao secao-clara" id="quem-criou" aria-labelledby="criou-titulo">
+  <div class="faixa criador">
+    <img src="assets/rodrigo-brito.webp" width="360" height="482" alt="Rodrigo Brito, criador do Missão Dinheiro Club" class="criador-foto" loading="lazy" decoding="async">
+    <div class="criador-txt">
+      <h2 id="criou-titulo">Por que eu criei o Missão Dinheiro Club</h2>
+      <p class="criador-apoio">Antes de virar um projeto, essa conversa começou em casa.</p>
+      <p>Sou pai da Letícia, do Caio e da Mel. Sou engenheiro e mestre em Economia, e mesmo assim aprendi a lidar com dinheiro tarde, já adulto. Decidi que meus filhos começariam antes de mim.</p>
+      <blockquote>“Eu não posso recuperar o tempo que perdi. Mas posso ajudar meus filhos a começar antes de mim.”</blockquote>
+      <p>O Missão Dinheiro Club leva para outras famílias o que deu certo na minha casa: conversas simples, as histórias da Turminha e ferramentas que transformam dinheiro em assunto de família.</p>
+      <p class="criador-ass">Rodrigo Brito</p>
     </div>
   </div>
 </section>
 
-<!-- 7. Teste para os pais -->
-<section class="secao secao-clara" id="teste">
-  <div class="faixa faixa-estreita">
-    <h2 class="centro">Como a sua criança lida com dinheiro?</h2>
-    <p class="intro centro">7 perguntas rápidas sobre o dia a dia. O resultado aparece na hora, com uma dica para fazer em casa. Não pedimos nome, e-mail nem telefone.</p>
-    <div class="teste" id="teste-caixa">
-      <div class="teste-barra" aria-hidden="true"><span id="teste-progresso"></span></div>
-      <form id="teste-form" novalidate>
-        <fieldset id="teste-pergunta">
-          <legend><span class="teste-n" id="teste-n"></span><span id="teste-q"></span></legend>
-          <div class="teste-opcoes" id="teste-opcoes"></div>
-        </fieldset>
-        <div class="teste-nav">
-          <button type="button" class="btn-link" id="teste-voltar" hidden>Voltar</button>
-        </div>
-      </form>
-      <div class="teste-resultado" id="teste-resultado" hidden tabindex="-1">
-        <img src="assets/tiko-lupa.webp" width="343" height="235" alt="" loading="lazy" decoding="async">
-        <p class="teste-rotulo">O perfil da sua criança hoje</p>
-        <h3 id="res-nome"></h3>
-        <p id="res-texto"></p>
-        <div class="dica"><strong>Para fazer em casa esta semana</strong><p id="res-dica"></p></div>
-        <div class="teste-saidas">
-          <a href="livro/" class="btn btn-grande">Conhecer o livro para os pais</a>
-          <a href="#experiencias" class="btn btn-fantasma">Ver as experiências</a>
-        </div>
-        <button type="button" class="btn-link" id="teste-refazer">Refazer o teste</button>
-        <p class="nota">O teste roda só no seu aparelho. Nada é enviado nem guardado.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 8. Como funciona em casa -->
-<section class="secao" id="como">
+<!-- 5. Nossa proposta -->
+<section class="secao" id="proposta" aria-labelledby="proposta-titulo">
   <div class="faixa">
-    <h2 class="centro">Como fica a rotina em casa</h2>
+    <div class="sec-cabeca">
+      <h2 id="proposta-titulo">O aprendizado ganha sentido quando chega à vida.</h2>
+      <p>Uma história puxa a conversa, uma atividade coloca a ideia em prática e uma ferramenta ajuda a planejar. Vocês podem começar por qualquer uma, sem ordem obrigatória.</p>
+    </div>
     <ol class="passos">
-      <li><strong>Um capítulo, uma missão</strong><span>Leia um capítulo do livro e faça a missão da semana com as crianças.</span></li>
-      <li><strong>Um episódio para conversar</strong><span>Assistam ao desenho juntos e perguntem: e se fosse com a gente?</span></li>
-      <li><strong>A prática fica em casa</strong><span>Com o kit, a mesada vai para os 4 potes e cada um acompanha o próprio Sonho.</span></li>
+      <li><strong>Entender com situações reais</strong><span>Mercado, mesada, presente, propaganda e celular: o ponto de partida é o que a criança já vive.</span></li>
+      <li><strong>Conversar e experimentar em família</strong><span>Um episódio, uma carta do Pistas ou uma missão do livro viram assunto na mesa e no sofá.</span></li>
+      <li><strong>Praticar nas escolhas do cotidiano</strong><span>Esperar, comparar, guardar e decidir junto, com combinados claros.</span></li>
     </ol>
+
+    <div class="potes-bloco">
+      <h3>Os 4 potes: um jeito simples de dividir o dinheiro</h3>
+      <p class="potes-intro">Não existe porcentagem certa. Cada família combina a sua divisão, e o Compartilhar pode ficar com zero.</p>
+      <ul class="potes4">
+        <li style="--c:#FFC12E"><strong>Agora</strong><span>Para gastar no dia a dia, com as pequenas vontades da semana.</span></li>
+        <li style="--c:#12B8BB"><strong>Reserva</strong><span>Para imprevistos: só sai quando acontece algo que ninguém planejou.</span></li>
+        <li style="--c:#2E8B57"><strong>Sonho</strong><span>Para um objetivo escolhido, com meta e prazo.</span></li>
+        <li style="--c:#7966D8"><strong>Compartilhar</strong><span>Para doar ou dividir com alguém. É uma escolha, nunca uma obrigação.</span></li>
+      </ul>
+    </div>
   </div>
 </section>
 
-<!-- 9. Episódio 1 -->
-<section class="secao secao-clara" id="episodio">
+<!-- 6. Turminha -->
+<section class="secao secao-clara" id="turminha" aria-labelledby="turma-titulo">
   <div class="faixa">
-    <h2 class="centro">O desenho da Turminha</h2>
-    <p class="intro centro">Episódio 1, O Mistério das 12 Moedas: 4 minutos para ver com as crianças e conversar depois.</p>
-    <div class="video video-centro" id="video" data-id="iwIQv-9KKnE">
-      <button type="button" class="video-capa" id="video-play" aria-label="Assistir ao episódio O Mistério das 12 Moedas">
-        <img src="assets/tiko-lupa.webp" width="343" height="235" alt="" loading="lazy" decoding="async">
-        <span class="video-titulo">O Mistério das 12 Moedas</span>
-        <span class="video-play" aria-hidden="true"></span>
-      </button>
+    <div class="sec-cabeca">
+      <h2 id="turma-titulo">Uma Turminha para acompanhar grandes descobertas.</h2>
+      <p>Os mesmos personagens estão no livro, nas cartas, no desenho e no MDC-JOGO.</p>
     </div>
-    <p class="video-nota centro">O vídeo abre pelo YouTube no modo sem cookies, só depois do clique.</p>
-    <div class="teste-saidas video-saidas">
-      <a href="https://youtu.be/iwIQv-9KKnE" target="_blank" rel="noopener" class="btn">Ver no YouTube</a>
-      <a href="https://www.youtube.com/channel/UC_r9yEVi3Tl_Zd3OXeg3oZQ?sub_confirmation=1" target="_blank" rel="noopener" class="btn btn-fantasma">Inscrever-se no canal</a>
-    </div>
-    <h3 class="centro turma-titulo">Conheça a Turminha</h3>
-    <p class="centro turma-intro">Os mesmos oito personagens estão no jogo, nas cartas e no desenho.</p>
-    <ul class="turma">
+    <ul class="turminha">
       <li style="--c:#F28C28"><img src="assets/tiko-idle.webp" width="192" height="192" alt="" loading="lazy" decoding="async"><strong>Tiko</strong><span>Mascote companheiro</span></li>
       <li style="--c:#B5487A"><img src="assets/bia-idle.webp" width="192" height="192" alt="" loading="lazy" decoding="async"><strong>Bia</strong><span>Pequena inventora</span></li>
       <li style="--c:#E2675A"><img src="assets/mel-idle.webp" width="192" height="192" alt="" loading="lazy" decoding="async"><strong>Mel</strong><span>Observadora empática</span></li>
@@ -310,58 +261,63 @@
   </div>
 </section>
 
-<!-- 10. Perguntas frequentes -->
-<section class="secao">
+<!-- 7. Perguntas frequentes -->
+<section class="secao" id="perguntas" aria-labelledby="faq-titulo">
   <div class="faixa faixa-estreita">
-    <h2 class="centro">Perguntas frequentes</h2>
+    <h2 id="faq-titulo" class="centro">Perguntas frequentes</h2>
     <div class="faq-lista">
-      <details class="faq"><summary>O que é o Missão Dinheiro Club?</summary><p>Um conjunto de experiências de educação financeira para a família: um livro para os pais, materiais para fazer em casa (o jogo de cartas Pistas e o kit da família), uma planilha, um desenho no YouTube e um aplicativo em desenvolvimento, todos com os personagens da Turminha.</p></details>
-      <details class="faq"><summary>Por onde eu começo?</summary><p>Pelo livro, se você quer saber o que ensinar em cada idade: os materiais e a planilha vêm junto, como bônus. O desenho é grátis no YouTube e é um bom jeito de puxar o assunto com as crianças.</p></details>
-      <details class="faq"><summary>Para que idade é?</summary><p>O livro é para pais de crianças de 5 a 17 anos. As cartas do Pistas têm uma versão para 5 a 7 anos e outra para 8 anos ou mais. O desenho é para assistir junto.</p></details>
-      <details class="faq"><summary>Meu filho é pequeno demais para isso?</summary><p>Não. Com 5 anos a criança já entende esperar, escolher e guardar. O livro mostra o que ensinar em cada idade, e as cartas têm uma versão só para os pequenos.</p></details>
+      <details class="faq"><summary>O que é o Missão Dinheiro Club?</summary><p>Um conjunto de experiências de educação financeira para a família: um livro para os pais com materiais para usar em casa, o desenho da Turminha no YouTube, uma planilha para os pais e o MDC-JOGO, enquanto o aplicativo é desenvolvido.</p></details>
+      <details class="faq"><summary>Por onde começar?</summary><p>Pelo que combina com a sua família agora. Para saber o que ensinar em cada idade, comece pelo livro. Para puxar o assunto com as crianças, assistam a um episódio do desenho. Para experimentar na hora, abra o MDC-JOGO no navegador.</p></details>
+      <details class="faq"><summary>Preciso adquirir todos os produtos?</summary><p>Não. Cada experiência funciona sozinha. O desenho e o MDC-JOGO são gratuitos, e o livro, quando for lançado, já vem com os bônus.</p></details>
+      <details class="faq"><summary>O que acompanha o livro?</summary><p>O jogo de cartas Missão Dinheiro: Pistas com o kit da família (Caderninho de Mesada, Cofrinho de Quatro Potes e Certificado), os Cartões das missões da semana, o Mapa do que ensinar em cada idade e uma planilha para os pais. Os detalhes estão na <a href="livro/#bonus">página do livro</a>.</p></details>
+      <details class="faq"><summary>Para quais idades são as experiências?</summary><p>O livro é para pais de crianças de 5 a 17 anos. As cartas do Pistas têm uma versão para 5 a 7 anos e outra para 8 anos ou mais. O MDC-JOGO vai dos 5 anos à vida adulta. O desenho é para assistir junto.</p></details>
       <details class="faq"><summary>Preciso entender de finanças?</summary><p>Não. Tudo foi feito para aprender junto, em português simples e com exemplos do dia a dia.</p></details>
-      <details class="faq"><summary>E o aplicativo?</summary><p>Está em desenvolvimento. Uma versão de teste, grátis, está sendo usada por famílias do piloto, e quem quiser pode experimentar.</p></details>
-      <details class="faq"><summary>Quais dados vocês coletam?</summary><p>O site não pede nome, e-mail nem telefone. Se você aceitar no aviso de cookies, o Google Analytics mede as visitas, sem anúncios e sem dados de crianças.</p></details>
+      <details class="faq"><summary>O aplicativo já está pronto?</summary><p>O aplicativo está em desenvolvimento. Enquanto isso, o MDC-JOGO permite experimentar parte da proposta pelo navegador.</p></details>
+      <details class="faq"><summary>O que é o MDC-JOGO?</summary><p>É o jogo do Club que funciona no navegador do celular ou do computador, sem instalar nada. É grátis, sem anúncios e sem compras, e não pede nome.</p></details>
+      <details class="faq"><summary>Como funciona a privacidade?</summary><p>O site não pede nome, e-mail nem telefone. O Google Analytics só mede as visitas se você aceitar no aviso de cookies, sem anúncios e sem dados de crianças. O MDC-JOGO envia só dados de uso sem nome, e dá para desligar o envio no rodapé do jogo. Veja a <a href="privacidade/">página de privacidade</a>.</p></details>
     </div>
   </div>
 </section>
 
-<!-- 11. Fechamento -->
-<section class="secao fechamento">
-  <div class="faixa faixa-estreita">
-    <div class="rostos" aria-hidden="true">
+<!-- 8. Encerramento -->
+<section class="fecho-club" aria-labelledby="fecho-titulo">
+  <div class="faixa fecho-in">
+    <div class="fecho-rostos" aria-hidden="true">
       <img src="assets/bia-idle.webp" width="192" height="192" alt="" loading="lazy" decoding="async">
-      <img src="assets/mel-idle.webp" width="192" height="192" alt="" loading="lazy" decoding="async">
       <img src="assets/caio-idle.webp" width="192" height="192" alt="" loading="lazy" decoding="async">
       <img src="assets/tiko-idle.webp" width="192" height="192" alt="" loading="lazy" decoding="async">
-      <img src="assets/leticia-idle.webp" width="192" height="192" alt="" loading="lazy" decoding="async">
-      <img src="assets/vinicius-idle.webp" width="192" height="192" alt="" loading="lazy" decoding="async">
-      <img src="assets/natty-idle.webp" width="192" height="192" alt="" loading="lazy" decoding="async">
+      <img src="assets/mel-idle.webp" width="192" height="192" alt="" loading="lazy" decoding="async">
     </div>
-    <h2>Dinheiro se aprende junto.</h2>
-    <p>Imagine o seu filho daqui a alguns anos: escolhendo com calma, guardando para o que importa e sabendo dizer não para o que não precisa. Isso começa em casa, hoje, com você do lado.</p>
-    <div class="hero-botoes">
-      <a href="#experiencias" class="btn btn-grande">Conheça as experiências</a>
-      <a href="livro/" class="btn btn-fantasma">Comece pelo livro</a>
+    <div class="fecho-txt">
+      <h2 id="fecho-titulo">A próxima conversa sobre dinheiro pode começar hoje.</h2>
+      <p>Escolha uma experiência e encontre uma forma de aprender junto com seu filho.</p>
     </div>
+    <a href="#experiencias" class="btn">Escolher uma experiência</a>
   </div>
 </section>
 
 </main>
 
-<footer class="rodape">
-  <div class="faixa rodape-in">
-    <p>Missão Dinheiro Club · Educação financeira para a família inteira.</p>
-    <p>Conteúdo educativo, não é recomendação de investimento. Visitas medidas só com o seu aceite. O vídeo do YouTube só carrega se você clicar nele.</p>
-    <nav aria-label="Rodapé">
-      <a href="jogo/">O aplicativo (versão de teste)</a>
-      <a href="livro/">O livro</a>
+<footer class="rodape" id="contato">
+  <div class="faixa rodape-grade">
+    <div>
+      <img src="assets/logo-main.webp" width="412" height="281" alt="Missão Dinheiro Club" class="rodape-logo" loading="lazy" decoding="async">
+      <p>Educação financeira para a família inteira.</p>
+      <p class="rodape-nota">Conteúdo educativo, não é recomendação de investimento.</p>
+    </div>
+    <nav aria-label="Experiências">
+      <p class="rodape-tit">Experiências</p>
+      <a href="livro/">O livro e os bônus</a>
+      <a href="#planilha">A planilha</a>
+      <a href="https://www.youtube.com/channel/UC_r9yEVi3Tl_Zd3OXeg3oZQ" target="_blank" rel="noopener">O desenho no YouTube</a>
+      <a href="jogo/">MDC-JOGO</a>
+    </nav>
+    <nav aria-label="Contato">
+      <p class="rodape-tit">Contato</p>
+      <a href="https://wa.me/5521981133669" target="_blank" rel="noopener">WhatsApp (21) 98113-3669</a>
       <a href="https://www.instagram.com/missaodinheiroclub/" target="_blank" rel="noopener">Instagram @missaodinheiroclub</a>
-      <a href="https://youtu.be/iwIQv-9KKnE" target="_blank" rel="noopener">Episódio 1 no YouTube</a>
-      <a href="https://www.youtube.com/channel/UC_r9yEVi3Tl_Zd3OXeg3oZQ" target="_blank" rel="noopener">Desenho da Turminha no YouTube</a>
       <a href="privacidade/">Privacidade</a>
       <a href="#cookies" data-cookies>Preferências de cookies</a>
-      <a href="https://wa.me/5521981133669" target="_blank" rel="noopener">Contato: WhatsApp (21) 98113-3669</a>
     </nav>
   </div>
 </footer>

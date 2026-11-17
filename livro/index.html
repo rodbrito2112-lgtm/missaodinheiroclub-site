@@ -19,6 +19,18 @@
   .breve-txt{max-width:520px;display:flex;flex-direction:column;gap:16px}
   .breve-txt p{color:var(--texto2);font-size:18px}
   .breve-botoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+  .bonus{padding:72px 0 96px;background:var(--noite2)}
+  .bonus h2{font-size:clamp(1.8rem,3.6vw,2.6rem);margin-bottom:10px}
+  .bonus-intro{color:var(--texto2);font-size:18px;margin-bottom:28px}
+  .bonus-lista{display:grid;grid-template-columns:1fr;gap:18px}
+  .bonus-item{background:var(--card);border:1px solid var(--linha);border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:8px}
+  .bonus-item h3{font-size:1.35rem}
+  .bonus-item p{color:var(--texto2);margin:0;font-size:16px;line-height:1.55}
+  .bonus-pistas{gap:18px}
+  .bonus-pistas img{width:100%;height:auto;border-radius:14px;background:var(--creme)}
+  .bonus-pistas>div{display:flex;flex-direction:column;gap:8px}
+  .bonus-nota{margin-top:24px;color:var(--amarelo);font-weight:600}
+  @media (min-width:860px){.bonus-lista{grid-template-columns:1fr 1fr}.bonus-pistas{grid-column:1/-1;flex-direction:row;align-items:center}.bonus-pistas img{width:46%;flex:none}}
 </style>
 </head>
 <body>
@@ -38,5 +50,29 @@
     </div>
   </div>
 </main>
+<section class="bonus" id="bonus">
+  <div class="faixa">
+    <h2>O que vem junto com o livro</h2>
+    <p class="bonus-intro">O livro vem com estes materiais para colocar em prática com as crianças, em casa:</p>
+    <div class="bonus-lista">
+      <article class="bonus-item bonus-pistas">
+        <img src="../assets/bonus-jogo-pistas.webp" width="800" height="480" alt="Cartas do jogo Missão Dinheiro: Pistas" loading="lazy" decoding="async">
+        <div>
+          <h3>Missão Dinheiro: Pistas + kit da família</h3>
+          <p>Um jogo de cartas para imprimir e jogar na mesa da sala: 36 cartas (18 para 5 a 7 anos e 18 para 8 anos ou mais), capa e regras, fichas e placar e um livro de cenas e ajudas. Vem com o Caderninho de Mesada, o Cofrinho de Quatro Potes (Agora, Reserva, Sonho e Compartilhar) e o Certificado.</p>
+        </div>
+      </article>
+      <article class="bonus-item">
+        <h3>Cartões das missões e Mapa do que ensinar em cada idade</h3>
+        <p>Cartões com missões para fazer na semana e um mapa de uma página com o que ensinar em cada idade.</p>
+      </article>
+      <article class="bonus-item">
+        <h3>Planilha do simulador de juros</h3>
+        <p>Para os pais verem, com os próprios números, a diferença que faz começar cedo. É uma simulação, não uma promessa de rendimento.</p>
+      </article>
+    </div>
+    <p class="bonus-nota">O livro está pronto e chega à loja em breve. Tudo isso vem junto.</p>
+  </div>
+</section>
 </body>
 </html>

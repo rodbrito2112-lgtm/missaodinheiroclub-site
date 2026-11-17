@@ -33,17 +33,17 @@ a{color:var(--amarelo)}
 .centro{text-align:center;margin-left:auto;margin-right:auto}
 .intro{color:var(--texto2);font-size:19px;max-width:60ch;margin-bottom:40px}
 
-/* Botões com relevo, como os do app */
-.btn{display:inline-flex;align-items:center;justify-content:center;text-align:center;min-height:56px;padding:14px 30px;border-radius:16px;background:var(--amarelo);color:var(--azul);font-family:var(--corpo);font-weight:600;font-size:18px;text-decoration:none;border:none;box-shadow:0 5px 0 var(--amarelo-esc);transition:transform .12s ease,box-shadow .12s ease,filter .12s ease;cursor:pointer}
-.btn:hover{filter:brightness(1.05);transform:translateY(-2px);box-shadow:0 7px 0 var(--amarelo-esc);color:var(--azul)}
-.btn:active{transform:translateY(5px);box-shadow:0 0 0 var(--amarelo-esc)}
-.btn-grande{min-height:64px;font-size:20px;padding:16px 36px}
-.btn-sm{min-height:44px;padding:8px 20px;font-size:16px;box-shadow:0 4px 0 var(--amarelo-esc)}
-.btn-fantasma{background:transparent;color:var(--branco);box-shadow:inset 0 0 0 2px var(--linha),0 5px 0 var(--linha)}
-.btn-fantasma:hover{color:var(--branco);box-shadow:inset 0 0 0 2px var(--texto2),0 7px 0 var(--linha)}
-.btn-fantasma:active{box-shadow:inset 0 0 0 2px var(--texto2)}
-.btn-escuro{background:var(--azul);color:var(--branco);box-shadow:0 5px 0 #041833}
-.btn-escuro:hover{color:var(--branco);box-shadow:0 7px 0 #041833}
+/* Botões (16/11/2026): planos, sem relevo; dois níveis (principal amarelo e secundário de contorno) */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-align:center;min-height:50px;padding:12px 24px;border-radius:12px;background:var(--amarelo);color:var(--azul);font-family:var(--corpo);font-weight:600;font-size:17px;line-height:1.2;text-decoration:none;border:2px solid var(--amarelo);box-shadow:none;transition:background-color .15s ease,border-color .15s ease,color .15s ease,transform .1s ease;cursor:pointer}
+.btn:hover{background:#FFD25C;border-color:#FFD25C;color:var(--azul)}
+.btn:active{transform:translateY(1px);background:var(--amarelo-esc);border-color:var(--amarelo-esc)}
+.btn-grande{min-height:52px;font-size:18px;padding:12px 28px}
+.btn-sm{min-height:44px;padding:8px 18px;font-size:16px}
+.btn-fantasma{background:transparent;color:var(--branco);border-color:var(--linha)}
+.btn-fantasma:hover{background:rgba(255,255,255,.06);border-color:var(--texto2);color:var(--branco)}
+.btn-fantasma:active{background:rgba(255,255,255,.1);border-color:var(--texto2)}
+.btn-escuro{background:var(--azul);border-color:var(--azul);color:var(--branco)}
+.btn-escuro:hover{background:#0F3466;border-color:#0F3466;color:var(--branco)}
 .btn-link{background:none;border:none;padding:12px 4px;min-height:44px;font:inherit;font-weight:600;color:var(--texto2);text-decoration:underline;cursor:pointer}
 
 /* Acessibilidade */
@@ -84,7 +84,7 @@ h1{font-weight:800;font-size:clamp(2.7rem,7.2vw,5.6rem);line-height:.98;letter-s
 .chao{position:absolute;left:4%;right:4%;bottom:0;height:46px;border-radius:50%;background:radial-gradient(closest-side,rgba(255,193,46,.55),rgba(255,193,46,0));z-index:0}
 .brilho{position:absolute;inset:auto 0 0 0;height:70%;background:radial-gradient(closest-side,rgba(18,184,187,.18),transparent);z-index:0}
 /* O momento de destaque: Sementes flutuando devagar */
-.m{position:absolute;width:44px;height:44px;z-index:6;animation:flutua 5s ease-in-out infinite}
+.m{position:absolute;width:44px;height:44px;z-index:6;animation:flutua 5s ease-in-out 1}
 .m1{left:3%;top:18%}.m2{left:18%;top:2%;width:30px;height:30px;animation-delay:-1.5s}
 .m3{right:4%;top:10%;animation-delay:-3s}.m4{right:20%;top:-4%;width:28px;height:28px;animation-delay:-2s}
 .m5{left:50%;top:-10%;width:34px;height:34px;animation-delay:-4s}

@@ -108,16 +108,16 @@
 
   // ---------- Aviso de cookies ----------
   var css = '' +
-    '.mdc-cookies{position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;max-width:560px;margin:0 auto;' +
-    'background:#0B1E3D;color:#E8EEF7;border:2px solid #24467A;border-radius:20px;padding:20px;' +
-    'font:15px/1.55 Inter,system-ui,sans-serif;box-shadow:0 12px 32px rgba(0,0,0,.45)}' +
+    '.mdc-cookies{position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;max-width:520px;margin:0 auto;' +
+    'background:#0B1E3D;color:#E8EEF7;border:2px solid #24467A;border-radius:16px;padding:14px 16px;' +
+    'font:14px/1.5 Inter,system-ui,sans-serif;box-shadow:0 12px 32px rgba(0,0,0,.45)}' +
     '.mdc-cookies[hidden]{display:none!important}' +
-    '.mdc-cookies h2{margin:0 0 6px;font:800 18px/1.3 Nunito,system-ui,sans-serif;color:#FFFFFF}' +
+    '.mdc-cookies h2{margin:0 0 4px;font:800 16px/1.3 Nunito,system-ui,sans-serif;color:#FFFFFF}' +
     '.mdc-cookies p{margin:0}' +
     '.mdc-cookies a{color:#FFC12E}' +
-    '.mdc-cookies-botoes{display:flex;gap:12px;margin-top:16px}' +
-    '.mdc-cookies button{flex:1;min-height:48px;border-radius:14px;border:2px solid #FFFFFF;background:transparent;' +
-    'color:#FFFFFF;font:600 16px Inter,system-ui,sans-serif;cursor:pointer}' +
+    '.mdc-cookies-botoes{display:flex;gap:10px;margin-top:12px}' +
+    '.mdc-cookies button{flex:1;min-height:44px;border-radius:10px;border:2px solid #FFFFFF;background:transparent;' +
+    'color:#FFFFFF;font:600 15px Inter,system-ui,sans-serif;cursor:pointer}' +
     '.mdc-cookies button:hover{background:#FFFFFF;color:#09274D}' +
     '.mdc-cookies button:focus-visible{outline:3px solid #FFC12E;outline-offset:2px}';
 
@@ -133,8 +133,7 @@
     aviso.hidden = true;
     aviso.innerHTML =
       '<h2 id="mdc-cookies-titulo">Podemos medir as visitas?</h2>' +
-      '<p>Com a sua permissão, usamos o Google Analytics para saber quantas pessoas visitam o site e de onde vêm. ' +
-      'Não usamos para anúncios e não coletamos dados de crianças. ' +
+      '<p>Com a sua permissão, o Google Analytics conta as visitas e de onde elas vêm. Sem anúncios e sem dados de crianças. ' +
       '<a href="' + raiz + 'privacidade/">Saiba mais</a>.</p>' +
       '<div class="mdc-cookies-botoes">' +
       '<button type="button" data-escolha="recusado">Recusar</button>' +
