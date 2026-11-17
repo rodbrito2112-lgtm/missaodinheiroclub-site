@@ -189,3 +189,7 @@ h3{text-wrap:balance}
 .tempo i{display:block;width:100%;background:#2E8B57;border-radius:6px 6px 2px 2px}
 .tempo span{font-size:12px;font-weight:600;color:#3D4F66}
 .exp-visual-plano{aspect-ratio:auto;min-height:280px}
+.link-seta{font-size:18px;text-decoration-color:var(--amarelo)}
+.link-seta span{display:inline-block;margin-left:6px;color:var(--amarelo);transition:transform .15s ease}
+.link-seta:hover span{transform:translateY(3px)}
+@media (max-width:640px){.hero-acoes{flex-direction:row;flex-wrap:wrap;justify-content:center;gap:4px 20px}}
