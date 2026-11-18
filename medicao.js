@@ -10,7 +10,7 @@
  */
 /*
  * Origem da visita para o relatório de vendas da Hotmart (parâmetro sck do checkout).
- * Lê só a UTM do endereço de chegada e guarda um rótulo de canal (google, meta_casa, meta_livro, email ou organico)
+ * Lê só a UTM do endereço de chegada e guarda um rótulo de canal (google, meta_casa, meta_livro, meta_vsl, email ou organico)
  * no sessionStorage, que some quando a aba é fechada. Não usa cookie e não guarda nenhum dado pessoal.
  * Funciona sem o aceite de cookies, porque não identifica ninguém e não vai para o Google.
  */
@@ -21,7 +21,7 @@
     if (!fonte) return;
     var conteudo = (q.get('utm_content') || '').toLowerCase();
     var origem = fonte === 'google' ? 'google'
-      : fonte === 'meta' ? (conteudo === 'livro' ? 'meta_livro' : 'meta_casa')
+      : fonte === 'meta' ? (conteudo === 'livro' ? 'meta_livro' : conteudo === 'vsl' ? 'meta_vsl' : 'meta_casa')
       : fonte === 'email' ? 'email'
       : 'organico';
     sessionStorage.setItem('mdc_origem', origem);
