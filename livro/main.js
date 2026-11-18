@@ -127,8 +127,13 @@
 
   /* ---------- Links de compra ---------- */
   if (cfg.checkoutUrl) {
+    // Origem da visita (gravada pelo medicao.js) vai no parâmetro sck, que a Hotmart mostra em cada venda.
+    var origem = 'organico';
+    try { origem = sessionStorage.getItem('mdc_origem') || 'organico'; } catch (e) {}
+    var linkCompra = cfg.checkoutUrl;
+    try { var u = new URL(cfg.checkoutUrl); u.searchParams.set('sck', origem); linkCompra = u.toString(); } catch (e) {}
     document.querySelectorAll('[data-checkout]').forEach(function (a) {
-      a.href = cfg.checkoutUrl;
+      a.href = linkCompra;
       a.target = '_blank';
       a.rel = 'noopener';
     });

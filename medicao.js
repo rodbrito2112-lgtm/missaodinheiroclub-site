@@ -8,6 +8,25 @@
  * - Anúncios ficam sempre negados. Nenhum evento leva nome, e-mail ou qualquer dado pessoal.
  * - O link "Preferências de cookies" no rodapé reabre o aviso.
  */
+/*
+ * Origem da visita para o relatório de vendas da Hotmart (parâmetro sck do checkout).
+ * Lê só a UTM do endereço de chegada e guarda um rótulo de canal (google, meta_casa, meta_livro ou organico)
+ * no sessionStorage, que some quando a aba é fechada. Não usa cookie e não guarda nenhum dado pessoal.
+ * Funciona sem o aceite de cookies, porque não identifica ninguém e não vai para o Google.
+ */
+(function () {
+  try {
+    var q = new URLSearchParams(location.search);
+    var fonte = (q.get('utm_source') || '').toLowerCase();
+    if (!fonte) return;
+    var conteudo = (q.get('utm_content') || '').toLowerCase();
+    var origem = fonte === 'google' ? 'google'
+      : fonte === 'meta' ? (conteudo === 'livro' ? 'meta_livro' : 'meta_casa')
+      : 'organico';
+    sessionStorage.setItem('mdc_origem', origem);
+  } catch (e) {}
+})();
+
 (function () {
   'use strict';
 
