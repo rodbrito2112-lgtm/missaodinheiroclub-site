@@ -103,6 +103,28 @@
   if (inStart) inStart.addEventListener('input', function (e) { state.start = Number(e.target.value); renderSim(); });
   renderSim();
 
+  /* ---------- Botões "Quero o livro": levam ao preço e ao botão de compra ---------- */
+  // Sem isso, o link #oferta para no topo da seção (foto e lista) e o botão de compra fica fora da tela.
+  // Enquadra do preço até a garantia; se não couber na tela, mostra o preço no topo, com o botão logo abaixo.
+  var compra = document.getElementById('compra');
+  if (compra) {
+    document.querySelectorAll('a[href="#oferta"]:not([data-checkout])').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        var botao = document.querySelector('[data-checkout]');
+        var fim = (botao && botao.nextElementSibling) || botao || compra;
+        var topo = compra.getBoundingClientRect().top + window.pageYOffset;
+        var base = fim.getBoundingClientRect().bottom + window.pageYOffset;
+        var alto = window.innerHeight;
+        var y = base - topo + 32 <= alto ? topo - (alto - (base - topo)) / 2 : topo - 16;
+        var calmo = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        window.scrollTo({ top: Math.max(y, 0), behavior: calmo ? 'auto' : 'smooth' });
+        if (history.replaceState) history.replaceState(null, '', '#oferta');
+        if (botao) botao.focus({ preventScroll: true });
+      });
+    });
+  }
+
   /* ---------- Links de compra ---------- */
   if (cfg.checkoutUrl) {
     document.querySelectorAll('[data-checkout]').forEach(function (a) {
