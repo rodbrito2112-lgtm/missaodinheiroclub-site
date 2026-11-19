@@ -178,24 +178,39 @@
       var email = (form.elements.email.value || '').trim();
       var consent = form.elements.consentimento.checked;
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showError('Digite um e-mail válido, como nome@exemplo.com.', 'email'); return; }
-      if (!consent) { showError('Marque a caixa de consentimento para receber o guia.', 'consentimento'); return; }
+      if (!consent) { showError('Marque a caixa para receber o guia por e-mail, ou baixe o PDF sem cadastro logo abaixo.', 'consentimento'); return; }
       var btn = form.querySelector('button[type="submit"], button:not([type])');
       if (btn) btn.disabled = true;
       var done = function () {
-        bind({ firstName: nome.split(' ')[0] || 'tudo certo', leadEmail: email });
+        bind({ leadEmail: email });
+        // Sem nome: "Pronto! Seu guia está liberado." (sem vírgula solta)
+        var primeiro = nome.split(' ')[0];
+        var titulo = sentWrap.querySelector('p');
+        if (titulo) titulo.textContent = primeiro ? 'Pronto, ' + primeiro + '! Seu guia está liberado.' : 'Pronto! Seu guia está liberado.';
         formWrap.hidden = true;
         var copy = document.getElementById('lead-sent-copy');
         if (copy && !cfg.leadEndpoint) copy.hidden = true; // sem ferramenta de e-mail, não prometer envio
         sentWrap.hidden = false;
       };
       if (!cfg.leadEndpoint) { done(); return; }
-      fetch(cfg.leadEndpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ nome: nome, email: email, consentimento: true, origem: 'site-guia-gratis', data: new Date().toISOString() })
-      }).then(function (r) {
-        if (!r.ok) throw new Error('HTTP ' + r.status);
+      // Formulário do MailerLite (endereço público ".../forms/<id>/subscribe"; nenhuma chave fica no site).
+      // Sem double opt-in (no plano grátis a confirmação só sai em inglês): o aceite fica na caixa desmarcada do formulário.
+      var dados = new FormData();
+      dados.append('fields[email]', email);
+      if (nome) dados.append('fields[name]', nome);
+      dados.append('ml-submit', '1');
+      dados.append('anticsrf', 'true');
+      var concluir = function () {
+        // Medição: só chega ao Google se a pessoa aceitou os cookies (o medicao.js segura o resto). Sem dado pessoal.
+        if (window.gtag) window.gtag('event', 'generate_lead', { local: 'guia_gratis' });
         done();
+      };
+      fetch(cfg.leadEndpoint, { method: 'POST', body: dados }).then(function (r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json().catch(function () { return {}; });
+      }).then(function (j) {
+        if (j && j.success === false) throw new Error('recusado');
+        concluir();
       }).catch(function () {
         if (btn) btn.disabled = false;
         showError('Não conseguimos enviar agora. Tente de novo em instantes.');

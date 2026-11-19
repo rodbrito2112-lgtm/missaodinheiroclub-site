@@ -8,10 +8,10 @@ window.MDC_CONFIG = {
   checkoutUrl: 'https://pay.hotmart.com/F108547611O',
 
   // Para onde vão os cadastros do guia grátis.
-  // Pode ser o endpoint de formulário da ferramenta de e-mail (MailerLite, Brevo, RD Station...)
-  // ou uma função própria. O site envia um POST em JSON: { nome, email, consentimento, origem, data }.
+  // Endereço do formulário do MailerLite (termina em /subscribe). Não é segredo: nenhuma chave fica no site.
+  // O site envia fields[email] e fields[name]; a pessoa entra no grupo "Guia grátis" e a automação manda o e-mail 1 com o guia.
   // Enquanto estiver vazio, o cadastro só libera o download do PDF (nada é salvo).
-  leadEndpoint: '',
+  leadEndpoint: 'https://assets.mailerlite.com/jsonp/2805335/forms/204441931417126597/subscribe',
 
   // Link do PDF do guia grátis. Por padrão, o arquivo que já está na pasta assets.
   guiaPdfUrl: 'assets/guia-gratuito-3-descobertas.pdf'
