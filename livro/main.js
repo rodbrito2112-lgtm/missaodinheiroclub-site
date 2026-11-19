@@ -198,6 +198,10 @@
       var dados = new FormData();
       dados.append('fields[email]', email);
       if (nome) dados.append('fields[name]', nome);
+      // Canal de chegada (o mesmo rótulo do sck, gravado pelo medicao.js): google, meta_livro, email, organico...
+      var origemLead = 'organico';
+      try { origemLead = sessionStorage.getItem('mdc_origem') || 'organico'; } catch (e) {}
+      dados.append('fields[origem]', origemLead);
       dados.append('ml-submit', '1');
       dados.append('anticsrf', 'true');
       var concluir = function () {
