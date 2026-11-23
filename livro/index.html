@@ -43,12 +43,12 @@
 
 <section style="padding: 56px 24px 40px">
 <div class="hero-in hero-grid" style="max-width: 960px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 22px; text-align: center">
-<h1 class="h-titulo" style="margin: 0; font-family: Nunito, sans-serif; font-weight: 900; font-size: clamp(2.1rem, 4.6vw, 3.4rem); line-height: 1.1; max-width: 900px">R$ 1,9 milhão ou R$ 337 mil.* A diferença: começar aos 20 ou aos 35.</h1>
+<h1 class="h-titulo" style="margin: 0; font-family: Nunito, sans-serif; font-weight: 900; font-size: clamp(2.1rem, 4.6vw, 3.4rem); line-height: 1.1; max-width: 900px">Seu filho pode chegar aos 50 com R$ 1 milhão ou com R$ 156 mil.* A diferença é quando ele começa.</h1>
 <p class="h-sub" style="margin: 0; font-family: Nunito, sans-serif; font-weight: 800; font-size: clamp(1.15rem, 2.2vw, 1.5rem); line-height: 1.4; color: #09274D; max-width: 760px">O que decide de que lado seu filho vai estar é o que ele aprende com você.</p>
-<div class="h-barras" role="img" aria-label="Comparação: quem começa aos 20 chega a R$ 1,9 milhão; quem começa aos 35 chega a R$ 337 mil" style="width: 100%; max-width: 720px; display: flex; flex-direction: column; gap: 10px; text-align: left">
-<div style="display: flex; align-items: center; gap: 12px"><span style="flex: none; width: 116px; font-size: 14px; font-weight: 600; color: #3D4F66">Começou aos 20</span><div style="flex: 1; min-width: 0"><div class="bar-grow" style="width: 100%; height: 34px; background: #FFC12E; border-radius: 8px; display: flex; align-items: center; justify-content: flex-end; padding: 0 12px; box-sizing: border-box; font-family: Nunito, sans-serif; font-weight: 900; font-size: 17px; color: #09274D">R$ 1,9 milhão</div></div></div>
-<div style="display: flex; align-items: center; gap: 12px"><span style="flex: none; width: 116px; font-size: 14px; font-weight: 600; color: #3D4F66">Começou aos 35</span><div style="flex: 1; min-width: 0; display: flex; align-items: center; gap: 10px"><div class="bar-grow" style="width: 17%; height: 34px; background: #09274D; border-radius: 8px; flex: none"></div><span style="font-family: Nunito, sans-serif; font-weight: 900; font-size: 17px; color: #09274D; white-space: nowrap">R$ 337 mil</span></div></div>
-<p style="margin: 4px 0 0; font-size: 14px; line-height: 1.5; color: #3D4F66">*Simulação: R$ 200 por mês até os 60 anos, a 12% ao ano, sem inflação, impostos ou taxas. Não é promessa de rendimento.</p>
+<div class="h-barras" role="img" aria-label="Comparação: quem começa aos 20 chega a R$ 1 milhão; quem começa aos 35 chega a R$ 156 mil" style="width: 100%; max-width: 720px; display: flex; flex-direction: column; gap: 10px; text-align: left">
+<div style="display: flex; align-items: center; gap: 12px"><span style="flex: none; width: 116px; font-size: 14px; font-weight: 600; color: #3D4F66">Começou aos 20</span><div style="flex: 1; min-width: 0"><div class="bar-grow" style="width: 100%; height: 34px; background: #FFC12E; border-radius: 8px; display: flex; align-items: center; justify-content: flex-end; padding: 0 12px; box-sizing: border-box; font-family: Nunito, sans-serif; font-weight: 900; font-size: 17px; color: #09274D">R$ 1 milhão</div></div></div>
+<div style="display: flex; align-items: center; gap: 12px"><span style="flex: none; width: 116px; font-size: 14px; font-weight: 600; color: #3D4F66">Começou aos 35</span><div style="flex: 1; min-width: 0; display: flex; align-items: center; gap: 10px"><div class="bar-grow" style="width: 15%; height: 34px; background: #09274D; border-radius: 8px; flex: none"></div><span style="font-family: Nunito, sans-serif; font-weight: 900; font-size: 17px; color: #09274D; white-space: nowrap">R$ 156 mil</span></div></div>
+<p style="margin: 4px 0 0; font-size: 14px; line-height: 1.5; color: #3D4F66">*Simulação: R$ 330 por mês até os 50 anos, a 12% ao ano, sem inflação, impostos ou taxas. Em 30 anos, a inflação reduz muito esse valor. Não é promessa de rendimento.</p>
 </div>
 <!-- Botão logo abaixo das barras, para aparecer na primeira tela também no computador -->
 <div class="h-cta" style="display: flex; flex-direction: column; align-items: center; gap: 10px">
@@ -88,7 +88,7 @@
 <form style="flex: 1 1 280px; min-width: 0; display: flex; flex-direction: column; gap: 26px">
 <label style="display: flex; flex-direction: column; gap: 10px; font-size: 15px; font-weight: 600">Valor investido por mês
 <span style="font-family: Nunito, sans-serif; font-weight: 900; font-size: 32px; color: #09274D" data-bind="monthlyFmt"></span>
-<input type="range" min="50" max="1000" step="50" id="sim-monthly" value="200" style="width: 100%; accent-color: #09274D; min-height: 44px"></label>
+<input type="range" min="50" max="1000" step="10" id="sim-monthly" value="330" style="width: 100%; accent-color: #09274D; min-height: 44px"></label>
 <label style="display: flex; flex-direction: column; gap: 10px; font-size: 15px; font-weight: 600">Idade em que começa a investir
 <span style="font-family: Nunito, sans-serif; font-weight: 900; font-size: 32px; color: #09274D" data-bind="startLabel"></span>
 <input type="range" min="15" max="45" step="1" id="sim-start" value="20" style="width: 100%; accent-color: #09274D; min-height: 44px"></label>
@@ -101,7 +101,7 @@
 </form>
 <div style="flex: 2 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
 <div aria-live="polite" style="display: flex; flex-wrap: wrap; gap: 14px">
-<div style="flex: 1 1 160px; background: #FFC12E; border-radius: 18px; padding: 16px 18px"><p style="margin: 0; font-size: 14px; font-weight: 600">Saldo aos 60 anos</p><p style="margin: 4px 0 0; font-family: Nunito, sans-serif; font-weight: 900; font-size: 26px" data-bind="finalFmt"></p></div>
+<div style="flex: 1 1 160px; background: #FFC12E; border-radius: 18px; padding: 16px 18px"><p style="margin: 0; font-size: 14px; font-weight: 600">Saldo aos 50 anos</p><p style="margin: 4px 0 0; font-family: Nunito, sans-serif; font-weight: 900; font-size: 26px" data-bind="finalFmt"></p></div>
 <div style="flex: 1 1 160px; background: #FFF8EC; border-radius: 18px; padding: 16px 18px"><p style="margin: 0; font-size: 14px; font-weight: 600">Total que saiu do bolso</p><p style="margin: 4px 0 0; font-family: Nunito, sans-serif; font-weight: 900; font-size: 26px" data-bind="depositFmt"></p></div>
 <div style="flex: 1 1 160px; background: #E6F7F7; border-radius: 18px; padding: 16px 18px"><p style="margin: 0; font-size: 14px; font-weight: 600">Veio dos rendimentos</p><p style="margin: 4px 0 0; font-family: Nunito, sans-serif; font-weight: 900; font-size: 26px" data-bind="gainFmt"></p></div>
 </div>
@@ -120,7 +120,7 @@
 <path data-bind-d="balPath" fill="none" stroke="#09274D" stroke-width="3.5" stroke-linejoin="round"></path>
 <text x="70" y="322" text-anchor="start" font-family="Inter, sans-serif" font-size="12" fill="#3D4F66" data-bind="xStart"></text>
 <text x="350" y="322" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#3D4F66" data-bind="xMid"></text>
-<text x="630" y="322" text-anchor="end" font-family="Inter, sans-serif" font-size="12" fill="#3D4F66">60 anos</text>
+<text x="630" y="322" text-anchor="end" font-family="Inter, sans-serif" font-size="12" fill="#3D4F66">50 anos</text>
 </svg>
 <figcaption style="display: flex; flex-wrap: wrap; gap: 18px; font-size: 14px; color: #24384F">
 <span style="display: inline-flex; align-items: center; gap: 8px"><svg width="22" height="8" aria-hidden="true"><line x1="0" y1="4" x2="22" y2="4" stroke="#09274D" stroke-width="3.5"></line></svg>Saldo acumulado</span>
@@ -244,8 +244,8 @@
 <summary style="display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 44px"><span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px"><span style="font-family: Nunito, sans-serif; font-weight: 800; font-size: 22px">Prefere ler? Leia a história do Rodrigo</span><span style="font-size: 15px; color: #3D4F66">Do consórcio que levava quase metade do salário à filha que investe aos 24 anos</span></span><span aria-hidden="true" style="flex: none; width: 40px; height: 40px; border-radius: 50%; background: #FFC12E; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 22px">+</span></summary>
 <div style="margin-top: 24px">
 <div style="max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px; font-size: 19px; line-height: 1.75; color: #24384F">
-<p style="margin: 0">Duzentos reais por mês. Numa simulação, quem começa aos 20 chega aos 60 com quase dois milhões. Quem começa aos 35, com 337 mil.</p>
-<p style="margin: 0">É uma simulação, não uma promessa: R$ 200 por mês até os 60 anos, a 12% ao ano, sem inflação, impostos ou taxas. A diferença não é quanto o seu filho vai ganhar. É quando ele começa. E o que decide quando ele começa é o que aprende com você.</p>
+<p style="margin: 0">Trezentos e trinta reais por mês. Numa simulação, quem começa aos 20 chega aos 50 com mais de um milhão. Quem começa aos 35, com cerca de 156 mil.</p>
+<p style="margin: 0">É uma simulação, não uma promessa: R$ 330 por mês até os 50 anos, a 12% ao ano, sem inflação, impostos ou taxas. Em 30 anos, a inflação reduz muito esse valor. A diferença não é quanto o seu filho vai ganhar. É quando ele começa. E o que decide quando ele começa é o que aprende com você.</p>
 <p style="margin: 0">Durante muito tempo, eu pensava: quando sobrar, eu começo a guardar. Nunca sobrou. Talvez você conheça essa sensação.</p>
 <p style="margin: 0">Então, aos 24 anos, para me obrigar a guardar, entrei num consórcio de carro que levava <strong>quase metade do meu salário.</strong> Fui sorteado, consegui o carro. Mas a dívida continuou comigo por anos. Foi esforço. Mas também foi sorte.</p>
 <p style="margin: 0">Eu sou o Rodrigo Brito. Pai da Letícia, do Caio e da Mel, engenheiro de formação e mestre em Economia. Mas, naquela época, eu não sabia lidar com dinheiro.</p>
@@ -256,7 +256,7 @@
 <p style="margin: 0"><strong>Segunda:</strong> o "não" sozinho não ensina. Aos 12, o Caio quis comprar uma skin num jogo. O dinheiro era dele. Em vez do não, eu perguntei: por quanto tempo isso vai fazer diferença para você? Ele escolheu uma versão mais barata e, meses depois, me disse: <strong>“Ainda bem que eu comprei a mais barata.”</strong></p>
 <p style="margin: 0"><strong>Terceira:</strong> proibir não ensina. Escolher dentro de um limite, sim. Numa festa junina, umas fichas acabaram aqui em casa com o "posso isso, posso aquilo". Como funcionam as fichas, e o que perguntar em cada idade, está no livro, passo a passo.</p>
 <p style="margin: 0">Aos 11 anos, a Letícia quis uma bicicleta. Fizemos um cofre juntos. Durante um ano, ela juntou parte da mesada e dos presentes. Completamos o que faltava, e ela comprou.</p>
-<p style="margin: 0">Hoje, aos 24, ela está formada, trabalha e investe entre 30% e 40% do salário, aproveitando que ainda mora com a gente. Aos 24, eu entregava quase metade do salário a um consórcio. Eu ainda estou buscando a minha liberdade financeira. Ela começou bem antes, com o que eu não tive: <strong>conhecimento cedo.</strong></p>
+<p style="margin: 0">Hoje, aos 24, ela está formada, trabalha e investe parte do que ganha todos os meses. Aos 24, eu entregava quase metade do salário a um consórcio. Eu ainda estou buscando a minha liberdade financeira. Ela começou bem antes, com o que eu não tive: <strong>conhecimento cedo.</strong></p>
 <p style="margin: 0">Foi daí que nasceu o livro. Ele não é sobre planilha nem sermão. É sobre missões: em cada capítulo, uma escolha pequena, do tamanho da idade do seu filho, feita na vida real. São 16 capítulos, com orientações para cada fase: 5 a 7, 8 a 10, 11 a 13 e 14 a 17 anos.</p>
 <p style="margin: 0">E não: este livro não promete deixar seu filho rico. Desconfie de quem promete. Ele ensina o seu filho a escolher, esperar e planejar.</p>
 <p style="margin: 0">Seu filho vai aprender sobre dinheiro de qualquer jeito: com você, com a propaganda ou com os próprios erros. Eu não posso voltar aos meus 20 anos. <strong>Mas você pode dar ao seu filho o que eu não tive: tempo.</strong></p>
@@ -373,7 +373,7 @@
 <img loading="lazy" decoding="async" src="assets/logo-missao-dinheiro-club.webp" width="94" height="64" alt="Missão Dinheiro Club" style="height: 64px; width: auto; display: block; align-self: flex-start; margin-bottom: 6px">
 <p style="margin: 0">© 2026 Rodrigo Brito da Silva Santos. Todos os direitos reservados.</p>
 <p style="margin: 0">Conteúdo educativo. Não constitui recomendação de investimento.</p>
-<p style="margin: 0">*Simulação: R$ 200 por mês até os 60 anos, a 12% ao ano, sem inflação, impostos ou taxas. Não é promessa de rendimento.</p>
+<p style="margin: 0">*Simulação: R$ 330 por mês até os 50 anos, a 12% ao ano, sem inflação, impostos ou taxas. Em 30 anos, a inflação reduz muito esse valor. Não é promessa de rendimento.</p>
 </div>
 <nav aria-label="Rodapé" style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start">
 <a href="politica-de-privacidade.html" style="color: #FFFFFF">Política de privacidade</a>

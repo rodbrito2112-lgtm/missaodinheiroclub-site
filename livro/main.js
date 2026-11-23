@@ -4,7 +4,8 @@
   var cfg = window.MDC_CONFIG || {};
 
   /* ---------- Simulador ---------- */
-  var state = { monthly: 200, start: 20, rate: 12 };
+  var state = { monthly: 330, start: 20, rate: 12 };
+  var FIM = 50; // idade final da simulação (a mesma do vídeo de vendas, VSL 2.5)
   var RATES = [6, 8, 10, 12];
 
   function money(v) {
@@ -17,7 +18,7 @@
   function series(monthly, start, rate) {
     var i = Math.pow(1 + rate / 100, 1 / 12) - 1;
     var pts = [];
-    for (var age = start; age <= 60; age++) {
+    for (var age = start; age <= FIM; age++) {
       var n = (age - start) * 12;
       var bal = n === 0 ? 0 : monthly * (Math.pow(1 + i, n) - 1) / i;
       pts.push({ age: age, bal: bal, dep: monthly * n });
@@ -28,13 +29,13 @@
   function computeSim() {
     var monthly = state.monthly, start = state.start, rate = state.rate;
     var pts = series(monthly, start, rate);
-    var lateStart = Math.min(start + 10, 59);
+    var lateStart = Math.min(start + 10, FIM - 1);
     var late = series(monthly, lateStart, rate);
     var last = pts[pts.length - 1];
     var lateLast = late[late.length - 1];
     var maxV = Math.max(last.bal, 1) * 1.05;
     var X0 = 70, X1 = 630, Y0 = 300, Y1 = 20;
-    function sx(age) { return X0 + (age - start) / Math.max(60 - start, 1) * (X1 - X0); }
+    function sx(age) { return X0 + (age - start) / Math.max(FIM - start, 1) * (X1 - X0); }
     function sy(v) { return Y0 - v / maxV * (Y0 - Y1); }
     function line(arr, key) {
       return arr.map(function (p, k) { return (k ? 'L' : 'M') + sx(p.age).toFixed(1) + ' ' + sy(p[key]).toFixed(1); }).join(' ');
@@ -50,13 +51,13 @@
       yTop: money(maxV),
       yMid: money(maxV / 2),
       xStart: start + ' anos',
-      xMid: Math.round((start + 60) / 2) + ' anos',
+      xMid: Math.round((start + FIM) / 2) + ' anos',
       balPath: balPath,
       areaPath: balPath + ' L' + X1 + ' ' + Y0 + ' L' + X0 + ' ' + Y0 + ' Z',
       depPath: line(pts, 'dep'),
       latePath: line(late, 'bal'),
       lateLegend: 'Começando 10 anos depois, aos ' + lateStart,
-      chartLabel: 'Gráfico do saldo acumulado de ' + money(monthly) + ' por mês, dos ' + start + ' aos 60 anos, chegando a ' + money(last.bal) + '.',
+      chartLabel: 'Gráfico do saldo acumulado de ' + money(monthly) + ' por mês, dos ' + start + ' aos ' + FIM + ' anos, chegando a ' + money(last.bal) + '.',
       insight: ratio > 1
         ? 'Com o mesmo valor por mês, quem começa aos ' + start + ' termina com ' + money(last.bal) + '. Quem deixa para os ' + lateStart + ' chega a ' + money(lateLast.bal) + ', cerca de ' + ratio.toLocaleString('pt-BR', { maximumFractionDigits: 1 }) + ' vezes menos. Não é falta de dinheiro. É falta de tempo. E tempo é a única coisa que você ainda pode dar ao seu filho.'
         : 'Ajuste a idade para comparar.',
@@ -94,7 +95,7 @@
   function renderSim() {
     renderRates();
     bind(computeSim());
-    // Leitores de tela ouvem "R$ 200 por mês" e "20 anos", não só o número
+    // Leitores de tela ouvem "R$ 330 por mês" e "20 anos", não só o número
     if (inMonthly) inMonthly.setAttribute('aria-valuetext', 'R$ ' + state.monthly.toLocaleString('pt-BR') + ' por mês');
     if (inStart) inStart.setAttribute('aria-valuetext', state.start + ' anos');
   }
