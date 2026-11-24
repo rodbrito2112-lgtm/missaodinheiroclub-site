@@ -29,7 +29,7 @@
   function computeSim() {
     var monthly = state.monthly, start = state.start, rate = state.rate;
     var pts = series(monthly, start, rate);
-    var lateStart = Math.min(start + 10, FIM - 1);
+    var lateStart = Math.min(start + 15, FIM - 1);
     var late = series(monthly, lateStart, rate);
     var last = pts[pts.length - 1];
     var lateLast = late[late.length - 1];
@@ -56,10 +56,10 @@
       areaPath: balPath + ' L' + X1 + ' ' + Y0 + ' L' + X0 + ' ' + Y0 + ' Z',
       depPath: line(pts, 'dep'),
       latePath: line(late, 'bal'),
-      lateLegend: 'Começando 10 anos depois, aos ' + lateStart,
+      lateLegend: 'Começando 15 anos depois, aos ' + lateStart,
       chartLabel: 'Gráfico do saldo acumulado de ' + money(monthly) + ' por mês, dos ' + start + ' aos ' + FIM + ' anos, chegando a ' + money(last.bal) + '.',
       insight: ratio > 1
-        ? 'Com o mesmo valor por mês, quem começa aos ' + start + ' termina com ' + money(last.bal) + '. Quem deixa para os ' + lateStart + ' chega a ' + money(lateLast.bal) + ', cerca de ' + ratio.toLocaleString('pt-BR', { maximumFractionDigits: 1 }) + ' vezes menos. Não é falta de dinheiro. É falta de tempo. E tempo é a única coisa que você ainda pode dar ao seu filho.'
+        ? 'Com o mesmo valor por mês, quem começa aos ' + start + ' termina com ' + money(last.bal) + '. Quem deixa para os ' + lateStart + ' chega a ' + money(lateLast.bal) + ', cerca de ' + ratio.toLocaleString('pt-BR', { maximumFractionDigits: 1 }) + ' vezes menos. Não é falta de dinheiro. É falta de tempo. E tempo é o que você ainda pode dar ao seu filho.'
         : 'Ajuste a idade para comparar.',
       waitCostFmt: money(Math.max(last.bal - lateLast.bal, 0))
     };
