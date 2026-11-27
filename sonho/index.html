@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Planejador do Sonho | Missão Dinheiro Club</title>
+<meta name="description" content="Ferramenta gratuita para pais: veja em quantas semanas seu filho chega ao que ele quer e imprima um quadro para pintar a cada semana.">
+<link rel="canonical" href="https://missaodinheiroclub.com.br/sonho/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Missão Dinheiro Club">
+<meta property="og:url" content="https://missaodinheiroclub.com.br/sonho/">
+<meta property="og:title" content="Planejador do Sonho">
+<meta property="og:description" content="Em quantas semanas seu filho chega ao que ele quer?">
+<meta name="theme-color" content="#09274D">
+<link rel="icon" type="image/png" sizes="32x32" href="../livro/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../livro/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Nunito:wght@700;800;900&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../livro/styles.css">
+<link rel="stylesheet" href="../ferramentas.css">
+<script src="../medicao.js"></script>
+</head>
+<body>
+<div class="pagina">
+<a href="#conteudo" class="pular">Pular para o conteúdo</a>
+
+<header class="topo nao-imprimir">
+<div>
+<a href="../" style="display:inline-flex"><img src="../livro/assets/logo-missao-dinheiro-club.webp" width="85" height="58" alt="Missão Dinheiro Club, página inicial" style="height: 58px; width: auto; display: block"></a>
+<a href="#oferta" class="btn-amarelo">Conhecer o livro</a>
+</div>
+</header>
+
+<main id="conteudo">
+<section class="sec">
+<div class="larg">
+<div class="intro">
+<h1>Planejador do Sonho</h1>
+<p>Seu filho quer muito alguma coisa? Coloquem o preço e quanto ele guarda por semana. Vocês descobrem juntos quantas semanas faltam.</p>
+</div>
+
+<div class="painel">
+<form class="ctrl nao-imprimir" onsubmit="return false">
+<label class="sim-lbl">O que ele quer (opcional)
+<input type="text" id="s-nome" class="campo-texto" maxlength="40" placeholder="Por exemplo: uma bola nova" autocomplete="off"></label>
+<label class="sim-lbl">Quanto custa
+<span class="campo-reais">R$ <input type="number" id="s-preco" min="1" max="100000" step="1" value="120" inputmode="numeric"></span></label>
+<label class="sim-lbl">Quanto ele já tem guardado
+<span class="campo-reais">R$ <input type="number" id="s-ja" min="0" max="100000" step="1" value="0" inputmode="numeric"></span></label>
+<label class="sim-lbl">Quanto ele guarda por semana
+<span class="campo-reais">R$ <input type="number" id="s-semana" min="1" max="10000" step="1" value="10" inputmode="numeric"></span></label>
+</form>
+
+<div class="res" aria-live="polite">
+<p style="margin: 0; font-size: 16px; font-weight: 600" data-bind="titulo"></p>
+<p class="grande-num" style="margin: 0" data-bind="semanas"></p>
+<p style="margin: 0; font-size: 17px; line-height: 1.55; color: #24384F" data-bind="quando"></p>
+<div class="barra" role="img" data-bind-aria="barraLabel"><div id="s-barra"></div></div>
+<p style="margin: 0; font-size: 14px; color: #3D4F66" data-bind="barraTxt"></p>
+<p class="dica nao-imprimir" data-bind="alternativa"></p>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<p style="margin: 0; font-weight: 600; font-size: 15px" data-bind="quadroTit"></p>
+<div id="s-quadro" class="quadro" aria-hidden="true"></div>
+</div>
+<div class="nao-imprimir" style="display: flex; flex-wrap: wrap; gap: 12px">
+<button type="button" id="s-imprimir" class="btn-contorno">Imprimir o quadro</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sec branco nao-imprimir">
+<div class="larg">
+<div class="intro esq">
+<h2>Como usar o quadro com seu filho</h2>
+<p>O que ensina não é a conta: é ver o sonho chegar perto, semana a semana.</p>
+</div>
+<div class="passos">
+<div class="passo"><h3>Ele escolhe o sonho</h3><p>O objetivo é dele, não seu. Ajude só a descobrir o preço de verdade, numa loja ou na internet.</p></div>
+<div class="passo"><h3>Um quadrinho por semana</h3><p>Imprima o quadro e cole perto do pote Sonho. Cada semana guardada vira um quadrinho pintado.</p></div>
+<div class="passo"><h3>Se ele mudar de ideia</h3><p>Tudo bem. Refaçam a conta juntos. Trocar de sonho também é uma escolha, e o dinheiro guardado continua dele.</p></div>
+</div>
+</div>
+</section>
+
+<section id="oferta" class="oferta nao-imprimir">
+<div class="oferta-in">
+<img loading="lazy" decoding="async" src="../livro/assets/capa-ebook.webp" width="600" height="900" alt="Capa do livro O futuro financeiro do seu filho começa com você">
+<div class="oferta-txt">
+<h2>O próximo passo está no livro</h2>
+<p><em>O futuro financeiro do seu filho começa com você</em> mostra o que conversar e o que fazer com seu filho em cada fase, dos 5 aos 17 anos. São 16 capítulos, uma missão prática por capítulo e 4 bônus para usar em casa, entre eles o jogo Missão Dinheiro: Pistas, que traz o Cofrinho de Quatro Potes.</p>
+<p class="preco"><strong>R$ 27,97</strong> · livro e 4 bônus · garantia de 7 dias</p>
+<div class="botoes">
+<a href="../livro/#oferta" data-checkout class="btn-amarelo grande">Quero o livro por R$ 27,97</a>
+<a href="../livro/" class="link-claro">Ver tudo o que vem no livro</a>
+</div>
+<p class="guia">Ainda não quer comprar? <a href="../livro/#guia-gratis">Baixe o guia grátis</a>.</p>
+</div>
+</div>
+</section>
+</main>
+
+<footer class="rodape nao-imprimir">
+<div>
+<div class="rodape-txt">
+<p>© 2026 Rodrigo Brito da Silva Santos. Todos os direitos reservados.</p>
+<p>Ferramenta para pais e responsáveis. Conteúdo educativo. Nenhum número ou texto que você digita aqui é guardado ou enviado.</p>
+</div>
+<nav aria-label="Rodapé">
+<a href="../simulador/">Simulador</a>
+<a href="../mesada/">Calculadora de mesada</a>
+<a href="../privacidade/">Política de privacidade</a>
+<a href="#cookies" data-cookies>Preferências de cookies</a>
+<a href="https://wa.me/5521981133669" target="_blank" rel="noopener">Contato: WhatsApp (21) 98113-3669</a>
+</nav>
+</div>
+</footer>
+</div>
+<script src="../livro/config.js"></script>
+<script src="../ferramentas.js"></script>
+<script src="sonho.js"></script>
+</body>
+</html>
