@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simulador: quanto vale o tempo | Missão Dinheiro Club</title>
+<meta name="description" content="Simulador gratuito para pais: mexa no valor por mês, na idade e no prazo e veja quanto o tempo pesa nos juros compostos. Simulação, não promessa.">
+<link rel="canonical" href="https://missaodinheiroclub.com.br/simulador/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Missão Dinheiro Club">
+<meta property="og:url" content="https://missaodinheiroclub.com.br/simulador/">
+<meta property="og:title" content="Simulador: quanto vale o tempo">
+<meta property="og:description" content="O mesmo valor por mês, começando em idades diferentes. Veja a diferença.">
+<meta name="theme-color" content="#09274D">
+<link rel="icon" type="image/png" sizes="32x32" href="../livro/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../livro/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Nunito:wght@700;800;900&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../livro/styles.css">
+<script src="../medicao.js"></script>
+<style>
+.sim-inp{width:100%;accent-color:#09274D;min-height:44px}
+.sim-num{font-family:Nunito,sans-serif;font-weight:900;font-size:30px;color:#09274D}
+.sim-lbl{display:flex;flex-direction:column;gap:8px;font-size:15px;font-weight:600}
+.card{flex:1 1 160px;border-radius:18px;padding:16px 18px}
+.card p{margin:0}
+.card .v{margin-top:4px;font-family:Nunito,sans-serif;font-weight:900;font-size:26px}
+.passo{flex:1 1 250px;background:#FFFFFF;border:1px solid #EADFC9;border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:8px}
+.passo h3{margin:0;font-family:Nunito,sans-serif;font-weight:800;font-size:20px}
+.passo p{margin:0;font-size:16px;line-height:1.6;color:#24384F}
+#oferta :focus-visible{outline-color:#FFC12E}
+</style>
+</head>
+<body>
+<div style="font-family: Inter, system-ui, sans-serif; color: #09274D; background: #FFF8EC; width: 100%">
+<a href="#conteudo" class="pular">Pular para o conteúdo</a>
+
+<header style="border-bottom: 1px solid #EADFC9">
+<div style="max-width: 1120px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="../" style="display:inline-flex"><img src="../livro/assets/logo-missao-dinheiro-club.webp" width="85" height="58" alt="Missão Dinheiro Club, página inicial" style="height: 58px; width: auto; display: block"></a>
+<a href="#oferta" style="background: #FFC12E; color: #09274D; text-decoration: none; padding: 12px 22px; border-radius: 999px; font-weight: 700; font-size: 15px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Conhecer o livro</a>
+</div>
+</header>
+
+<main id="conteudo">
+<section style="padding: 44px 24px 72px">
+<div style="max-width: 1080px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px">
+<div style="max-width: 760px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; gap: 12px">
+<h1 style="margin: 0; font-family: Nunito, sans-serif; font-weight: 900; font-size: clamp(2rem, 4.4vw, 3rem); line-height: 1.12">Quanto vale começar cedo?</h1>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #3D4F66">Mexa nos números e veja quanto o tempo pesa nos juros compostos. É uma simulação, não promessa.</p>
+</div>
+
+<div style="background: #FFFFFF; border: 1px solid #EADFC9; border-radius: 28px; padding: clamp(20px, 4vw, 36px); display: flex; flex-wrap: wrap; gap: 32px">
+<form id="sim-form" style="flex: 1 1 280px; min-width: 0; display: flex; flex-direction: column; gap: 22px" onsubmit="return false">
+<label class="sim-lbl">Valor por mês
+<span class="sim-num" data-bind="monthlyFmt"></span>
+<input class="sim-inp" type="range" min="50" max="2000" step="10" id="sim-monthly" value="330"></label>
+<label class="sim-lbl">Idade em que começa
+<span class="sim-num" data-bind="startLabel"></span>
+<input class="sim-inp" type="range" min="10" max="50" step="1" id="sim-start" value="20"></label>
+<label class="sim-lbl">Por quantos anos
+<span class="sim-num" data-bind="yearsLabel"></span>
+<input class="sim-inp" type="range" min="5" max="45" step="1" id="sim-years" value="30"></label>
+<fieldset style="border: none; margin: 0; padding: 0">
+<legend style="font-size: 15px; font-weight: 600; margin-bottom: 10px; padding: 0">Rendimento anual da simulação</legend>
+<div id="sim-rates" style="display: flex; flex-wrap: wrap; gap: 8px"></div>
+</fieldset>
+<div style="display: flex; flex-direction: column; gap: 10px; padding: 14px 16px; background: #FFF8EC; border-radius: 16px">
+<label style="display: flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 600; min-height: 44px; cursor: pointer"><input type="checkbox" id="sim-inf-on" style="width: 22px; height: 22px; accent-color: #09274D; flex: none">Descontar a inflação</label>
+<label id="sim-inf-box" class="sim-lbl" hidden>Inflação por ano: <span data-bind="infLabel"></span>
+<input class="sim-inp" type="range" min="2" max="8" step="0.5" id="sim-inf" value="4"></label>
+</div>
+</form>
+
+<div style="flex: 2 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<div aria-live="polite" style="display: flex; flex-wrap: wrap; gap: 14px">
+<div class="card" style="background: #FFC12E"><p style="font-size: 14px; font-weight: 600" data-bind="finalTitle"></p><p class="v" data-bind="finalFmt"></p></div>
+<div class="card" style="background: #FFF8EC"><p style="font-size: 14px; font-weight: 600">Total que saiu do bolso</p><p class="v" data-bind="depositFmt"></p></div>
+<div class="card" style="background: #E6F7F7"><p style="font-size: 14px; font-weight: 600">Veio dos rendimentos</p><p class="v" data-bind="gainFmt"></p></div>
+</div>
+<div style="background: #09274D; color: #FFFFFF; border-radius: 18px; padding: 18px 22px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px"><p style="margin: 0; font-size: 15px; font-weight: 600" data-bind="waitTitle"></p><p style="margin: 0; font-family: Nunito, sans-serif; font-weight: 900; font-size: 30px; color: #FFC12E" data-bind="waitCostFmt"></p></div>
+<p id="sim-ressalva" style="margin: 0; font-size: 14px; line-height: 1.5; color: #3D4F66; background: #FFF8EC; border-radius: 12px; padding: 12px 14px" data-bind="ressalva"></p>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
+<svg viewBox="0 0 640 330" role="img" data-bind-aria-label="chartLabel" style="width: 100%; height: auto; display: block">
+<line x1="70" y1="20" x2="630" y2="20" stroke="#EADFC9" stroke-width="1"></line>
+<line x1="70" y1="160" x2="630" y2="160" stroke="#EADFC9" stroke-width="1"></line>
+<line x1="70" y1="300" x2="630" y2="300" stroke="#9AA8BA" stroke-width="1.2"></line>
+<text x="62" y="24" text-anchor="end" font-family="Inter, sans-serif" font-size="12" fill="#3D4F66" data-bind="yTop"></text>
+<text x="62" y="164" text-anchor="end" font-family="Inter, sans-serif" font-size="12" fill="#3D4F66" data-bind="yMid"></text>
+<text x="62" y="304" text-anchor="end" font-family="Inter, sans-serif" font-size="12" fill="#3D4F66">R$ 0</text>
+<path data-bind-d="areaPath" fill="#FFC12E" fill-opacity="0.35"></path>
+<path data-bind-d="latePath" fill="none" stroke="#9AA8BA" stroke-width="2.5" stroke-dasharray="6 6"></path>
+<path data-bind-d="depPath" fill="none" stroke="#0A5F61" stroke-width="2.5"></path>
+<path data-bind-d="balPath" fill="none" stroke="#09274D" stroke-width="3.5" stroke-linejoin="round"></path>
+<text x="70" y="322" text-anchor="start" font-family="Inter, sans-serif" font-size="12" fill="#3D4F66" data-bind="xStart"></text>
+<text x="350" y="322" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#3D4F66" data-bind="xMid"></text>
+<text x="630" y="322" text-anchor="end" font-family="Inter, sans-serif" font-size="12" fill="#3D4F66" data-bind="xEnd"></text>
+</svg>
+<figcaption style="display: flex; flex-wrap: wrap; gap: 18px; font-size: 14px; color: #24384F">
+<span style="display: inline-flex; align-items: center; gap: 8px"><svg width="22" height="8" aria-hidden="true"><line x1="0" y1="4" x2="22" y2="4" stroke="#09274D" stroke-width="3.5"></line></svg>Saldo acumulado</span>
+<span style="display: inline-flex; align-items: center; gap: 8px"><svg width="22" height="8" aria-hidden="true"><line x1="0" y1="4" x2="22" y2="4" stroke="#0A5F61" stroke-width="2.5"></line></svg>Total depositado</span>
+<span style="display: inline-flex; align-items: center; gap: 8px"><svg width="22" height="8" aria-hidden="true"><line x1="0" y1="4" x2="22" y2="4" stroke="#9AA8BA" stroke-width="2.5" stroke-dasharray="5 4"></line></svg><span data-bind="lateLegend"></span></span>
+</figcaption>
+</figure>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #24384F" data-bind="insight"></p>
+</div>
+</div>
+</div>
+</section>
+
+<section style="padding: 64px 24px; background: #FFFFFF; border-top: 1px solid #EADFC9">
+<div style="max-width: 1080px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px">
+<div style="max-width: 760px; display: flex; flex-direction: column; gap: 10px">
+<h2 style="margin: 0; font-family: Nunito, sans-serif; font-weight: 800; font-size: clamp(1.7rem, 3vw, 2.2rem); line-height: 1.2">Como ensinar isso ao seu filho</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #3D4F66">Seu filho não precisa investir agora para aprender o que esta conta mostra: esperar faz o dinheiro crescer. Uma ideia para cada idade:</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 16px">
+<div class="passo"><h3>De 5 a 7 anos</h3><p>Escolham juntos um sonho pequeno e guardem para ele no pote Sonho. A cada semana, uma moeda entra no pote. Ele vê o pote encher e aprende que esperar traz o que ele quer.</p></div>
+<div class="passo"><h3>De 8 a 12 anos</h3><p>Abram este simulador juntos. Deixe que ele mexa na idade e diga o que mudou. A pergunta que fica: “Por que começar antes faz tanta diferença?”</p></div>
+<div class="passo"><h3>De 13 a 17 anos</h3><p>Peça que ele simule o primeiro salário: quanto guardaria por mês e por quantos anos. Depois, comparem começar aos 20 e começar aos 35.</p></div>
+</div>
+</div>
+</section>
+
+<section id="oferta" style="padding: 64px 24px; background: #09274D; color: #FFFFFF">
+<div style="max-width: 1000px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 40px">
+<img loading="lazy" decoding="async" src="../livro/assets/capa-ebook.webp" width="600" height="900" alt="Capa do livro O futuro financeiro do seu filho começa com você" style="flex: none; width: min(60%, 220px); height: auto; border-radius: 8px; box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3); margin: 0 auto">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-family: Nunito, sans-serif; font-weight: 800; font-size: clamp(1.7rem, 3vw, 2.2rem); line-height: 1.2">O próximo passo está no livro</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #D5DEEA"><em>O futuro financeiro do seu filho começa com você</em> mostra o que conversar e o que fazer com seu filho em cada fase, dos 5 aos 17 anos. São 16 capítulos, uma missão prática por capítulo e 4 bônus para imprimir, entre eles o jogo Missão Dinheiro: Pistas.</p>
+<p style="margin: 0; font-size: 18px; color: #FFFFFF"><strong style="font-family: Nunito, sans-serif; font-weight: 900; font-size: 30px; color: #FFC12E">R$ 27,97</strong> · livro e 4 bônus · garantia de 7 dias</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<a href="../livro/#oferta" data-checkout style="background: #FFC12E; color: #09274D; text-decoration: none; font-weight: 700; font-size: 18px; padding: 16px 26px; border-radius: 999px; min-height: 56px; box-sizing: border-box; display: inline-flex; align-items: center">Quero o livro por R$ 27,97</a>
+<a href="../livro/" style="color: #FFFFFF; font-weight: 600; font-size: 16px; display: inline-flex; align-items: center; min-height: 56px">Ver tudo o que vem no livro</a>
+</div>
+<p style="margin: 4px 0 0; font-size: 15px; color: #D5DEEA">Ainda não quer comprar? <a href="../livro/#guia-gratis" style="color: #FFFFFF">Baixe o guia grátis</a>.</p>
+</div>
+</div>
+</section>
+</main>
+
+<footer style="background: #09274D; color: #D5DEEA; padding: 32px 24px 44px; border-top: 1px solid rgba(255,255,255,0.12)">
+<div style="max-width: 1120px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; font-size: 14px; line-height: 1.6">
+<div style="display: flex; flex-direction: column; gap: 6px; max-width: 620px">
+<p style="margin: 0">© 2026 Rodrigo Brito da Silva Santos. Todos os direitos reservados.</p>
+<p style="margin: 0">Ferramenta para pais e responsáveis. Conteúdo educativo. Não constitui recomendação de investimento. Nenhum número que você digita aqui é guardado ou enviado.</p>
+</div>
+<nav aria-label="Rodapé" style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start">
+<a href="../privacidade/" style="color: #FFFFFF">Política de privacidade</a>
+<a href="#cookies" data-cookies style="color: #FFFFFF">Preferências de cookies</a>
+<a href="https://wa.me/5521981133669" target="_blank" rel="noopener" style="color: #FFFFFF">Contato: WhatsApp (21) 98113-3669</a>
+</nav>
+</div>
+</footer>
+</div>
+<script src="../livro/config.js"></script>
+<script src="simulador.js"></script>
+</body>
+</html>
